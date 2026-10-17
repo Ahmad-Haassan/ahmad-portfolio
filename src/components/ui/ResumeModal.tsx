@@ -95,17 +95,26 @@ export function ResumeModal({ isOpen, onClose, onOpenConnect }: ResumeModalProps
         <div className="overflow-y-auto p-6 sm:p-10 space-y-8 text-sm text-[#C2CCD6]">
           {/* Header Info */}
           <div className="border-b border-white/10 pb-6">
-            <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
-              <div>
-                <h1 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-white">
-                  Ahmad Hassan
-                </h1>
-                <p className="text-sm font-mono text-[#A3FF12] mt-1 font-semibold">
-                  Computer Science Student · Aspiring AI &amp; Automation Developer
-                </p>
-                <p className="text-xs text-[#9BA7B7] mt-2 max-w-xl leading-relaxed">
-                  Passionate student engineer exploring AI integration, desktop automation prototypes, and modern responsive web applications with strong foundations in computer science.
-                </p>
+            <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6">
+              <div className="flex items-start gap-4 sm:gap-5">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border-2 border-[#A3FF12]/40 shadow-[0_0_15px_rgba(163,255,18,0.2)] shrink-0 bg-white/[0.04]">
+                  <img
+                    src="/ahmad-hassan.png"
+                    alt="Ahmad Hassan Portrait"
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <div>
+                  <h1 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-white">
+                    Ahmad Hassan
+                  </h1>
+                  <p className="text-sm font-mono text-[#A3FF12] mt-1 font-semibold">
+                    Computer Science Student · Aspiring AI &amp; Automation Developer
+                  </p>
+                  <p className="text-xs text-[#9BA7B7] mt-2 max-w-xl leading-relaxed">
+                    Passionate student engineer exploring AI integration, desktop automation prototypes, and modern responsive web applications with strong foundations in computer science.
+                  </p>
+                </div>
               </div>
 
               <div className="space-y-1.5 text-xs font-mono text-[#9BA7B7] shrink-0 sm:text-right">

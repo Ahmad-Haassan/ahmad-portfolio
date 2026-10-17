@@ -163,8 +163,12 @@ export function PortfolioAssistant() {
           {/* Header */}
           <div className="p-4 border-b border-white/10 flex items-center justify-between bg-white/[0.02]">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#A3FF12]/20 to-[#00D9FF]/20 border border-[#A3FF12]/30 flex items-center justify-center">
-                <Bot className="w-4 h-4 text-[#A3FF12]" />
+              <div className="relative w-8 h-8 rounded-xl overflow-hidden border border-[#A3FF12]/40 shrink-0 bg-white/[0.04] shadow-[0_0_10px_rgba(163,255,18,0.2)]">
+                <img
+                  src="/ahmad-hassan.png"
+                  alt="Ahmad Hassan Guide"
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
               <div>
                 <div className="flex items-center gap-2">

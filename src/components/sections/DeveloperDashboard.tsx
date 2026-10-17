@@ -138,11 +138,14 @@ export function DeveloperDashboard({ onOpenConnect }: DeveloperDashboardProps) {
             <GlassCard variant="interactive" className="p-6 sm:p-7 h-full flex flex-col justify-between">
               <div>
                 <div className="flex items-start justify-between gap-4 mb-5">
-                  <div className="flex items-center gap-3">
-                    {/* Abstract animated avatar badge */}
-                    <div className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-[#A3FF12]/20 via-[#00D9FF]/20 to-transparent border border-white/15 flex items-center justify-center overflow-hidden">
-                      <div className="absolute inset-0 bg-[radial-gradient(#A3FF12_1px,transparent_1px)] [background-size:8px_8px] opacity-40 animate-pulse" />
-                      <User className="w-7 h-7 text-white relative z-10" />
+                  <div className="flex items-center gap-3.5">
+                    {/* Real Profile Avatar */}
+                    <div className="relative w-14 h-14 rounded-2xl border-2 border-[#A3FF12]/50 shadow-[0_0_15px_rgba(163,255,18,0.25)] overflow-hidden shrink-0 bg-white/[0.04]">
+                      <img
+                        src="/ahmad-hassan.png"
+                        alt="Ahmad Hassan Avatar"
+                        className="w-full h-full object-cover object-top"
+                      />
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-white flex items-center gap-2">

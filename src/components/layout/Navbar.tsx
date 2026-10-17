@@ -86,8 +86,12 @@ export function Navbar({
             href="#home"
             className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A3FF12] rounded-lg p-1"
           >
-            <div className="w-9 h-9 rounded-xl bg-white/[0.05] border border-white/15 flex items-center justify-center transition-all duration-300 group-hover:border-[#A3FF12]/60 group-hover:shadow-[0_0_15px_rgba(163,255,18,0.25)]">
-              <Cpu className="w-5 h-5 text-[#A3FF12] transition-transform duration-300 group-hover:rotate-12" />
+            <div className="w-9 h-9 rounded-xl overflow-hidden border border-white/15 flex items-center justify-center transition-all duration-300 group-hover:border-[#A3FF12]/60 group-hover:shadow-[0_0_15px_rgba(163,255,18,0.25)] shrink-0 bg-white/[0.05]">
+              <img
+                src="/ahmad-hassan.png"
+                alt="Ahmad Hassan"
+                className="w-full h-full object-cover object-top"
+              />
             </div>
             <div className="flex flex-col">
               <span className="text-base font-bold tracking-tight text-white group-hover:text-white transition-colors flex items-center gap-1.5">

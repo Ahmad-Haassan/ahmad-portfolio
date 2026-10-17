@@ -258,9 +258,41 @@ export function AboutSection({ onOpenConnect, onOpenResume }: AboutSectionProps)
             </GlassCard>
           </div>
 
-          {/* Right Column: Key Pillars & Honest Focus Cards */}
+          {/* Right Column: Featured Portrait & Exploration Cards */}
           <div className="lg:col-span-5 flex flex-col gap-4">
-            <h3 className="text-xs font-mono uppercase tracking-widest text-[#00D9FF] mb-2 flex items-center gap-2">
+            {/* Featured Portrait Card */}
+            <GlassCard
+              variant="elevated"
+              className="p-5 flex items-center gap-5 border-[#A3FF12]/25 shadow-[0_10px_35px_rgba(0,0,0,0.5)]"
+            >
+              <div className="relative shrink-0">
+                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border-2 border-[#A3FF12]/50 shadow-[0_0_20px_rgba(163,255,18,0.25)] relative group bg-white/[0.04]">
+                  <img
+                    src="/ahmad-hassan.png"
+                    alt="Ahmad Hassan Portrait"
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#07090D]/50 via-transparent to-transparent pointer-events-none" />
+                </div>
+                <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-[#A3FF12] border-2 border-[#07090D] shadow-[0_0_8px_#A3FF12]" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-1">
+                  <h3 className="text-base font-bold text-white truncate">Ahmad Hassan</h3>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#A3FF12]/10 border border-[#A3FF12]/30 text-[#A3FF12] shrink-0">
+                    CS STUDENT
+                  </span>
+                </div>
+                <p className="text-xs font-mono text-[#00D9FF] mb-1.5">
+                  Aspiring AI &amp; Automation Developer
+                </p>
+                <p className="text-[11px] text-[#9BA7B7] leading-relaxed">
+                  Exploring practical software, machine learning concepts, and workflow automation.
+                </p>
+              </div>
+            </GlassCard>
+
+            <h3 className="text-xs font-mono uppercase tracking-widest text-[#00D9FF] my-1 flex items-center gap-2">
               <Layers className="w-3.5 h-3.5" />
               <span>AREAS OF ACTIVE EXPLORATION</span>
             </h3>

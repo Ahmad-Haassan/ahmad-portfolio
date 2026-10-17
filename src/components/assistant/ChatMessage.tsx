@@ -28,13 +28,21 @@ export function ChatMessage({
     <div className={`flex gap-3 ${isUser ? "flex-row-reverse" : "flex-row"} items-start my-3 text-xs`}>
       {/* Avatar */}
       <div
-        className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 border ${
+        className={`w-7 h-7 rounded-lg overflow-hidden flex items-center justify-center shrink-0 border ${
           isUser
             ? "bg-[#00D9FF]/10 border-[#00D9FF]/30 text-[#00D9FF]"
-            : "bg-[#A3FF12]/10 border-[#A3FF12]/30 text-[#A3FF12]"
+            : "border-[#A3FF12]/40 bg-white/[0.04] shadow-[0_0_8px_rgba(163,255,18,0.2)]"
         }`}
       >
-        {isUser ? <User className="w-3.5 h-3.5" /> : <Bot className="w-3.5 h-3.5" />}
+        {isUser ? (
+          <User className="w-3.5 h-3.5" />
+        ) : (
+          <img
+            src="/ahmad-hassan.png"
+            alt="Ahmad Hassan"
+            className="w-full h-full object-cover object-top"
+          />
+        )}
       </div>
 
       {/* Bubble Container */}

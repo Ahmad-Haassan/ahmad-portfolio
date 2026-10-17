@@ -56,8 +56,12 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
           href="/"
           className="flex items-center gap-2.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A3FF12] rounded-lg p-1"
         >
-          <div className="w-8 h-8 rounded-lg bg-white/[0.05] border border-white/15 flex items-center justify-center transition-all duration-300 group-hover:border-[#A3FF12]/60">
-            <Cpu className="w-4 h-4 text-[#A3FF12]" />
+          <div className="w-8 h-8 rounded-lg overflow-hidden border border-white/15 flex items-center justify-center transition-all duration-300 group-hover:border-[#A3FF12]/60 shrink-0 bg-white/[0.05]">
+            <img
+              src="/ahmad-hassan.png"
+              alt="Ahmad Hassan"
+              className="w-full h-full object-cover object-top"
+            />
           </div>
           <span className="text-sm font-bold tracking-tight text-white flex items-center gap-1.5">
             AHMAD HASSAN
