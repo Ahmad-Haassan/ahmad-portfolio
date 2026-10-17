@@ -119,7 +119,7 @@ ahmad-portfolio/
    ```
 
 4. **Open in browser:**
-   Navigate to [http://localhost:3000](http://localhost:3000) to view the live build.
+   Navigate to https://ahmad-portfolio-olive-nine.vercel.app/(https://ahmad-portfolio-olive-nine.vercel.app/) to view the live build.
 
 ---
 
