@@ -49,7 +49,7 @@ export function Footer({ onOpenConnect, onOpenResume }: FooterProps) {
               </button>
 
               <a
-                href="https://github.com"
+                href="https://github.com/Ahmad-Haassan"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/10 hover:border-white/40 hover:text-white text-[#9BA7B7] transition-all flex items-center justify-center focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/40"

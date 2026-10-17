@@ -216,7 +216,7 @@ export function CommandPalette({
       category: "Social & External",
       icon: <GithubIcon className="w-4 h-4 text-white" />,
       action: () => {
-        window.open("https://github.com", "_blank", "noopener,noreferrer");
+        window.open("https://github.com/Ahmad-Haassan", "_blank", "noopener,noreferrer");
         onClose();
       },
     },

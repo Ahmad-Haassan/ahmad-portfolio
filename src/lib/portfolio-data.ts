@@ -66,7 +66,7 @@ export const PORTFOLIO_DATA: PortfolioKnowledge = {
   },
   contact: {
     email: "ahmad.hassan.dev@gmail.com",
-    github: "https://github.com",
+    github: "https://github.com/Ahmad-Haassan",
     linkedin: "https://linkedin.com",
     location: "Pakistan (Remote / Worldwide)",
   },

@@ -151,7 +151,7 @@ export function HeroSection({
 
             <div className="flex items-center gap-2">
               <a
-                href="https://github.com"
+                href="https://github.com/Ahmad-Haassan"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-1.5 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 text-white transition-colors"
