@@ -7,3 +7,9 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+## Workflow: Autonomous GitHub Push & LinkedIn DevLog
+
+Whenever the user instructs to "ship it", "push to github", "post on linkedin", or wrap up a feature:
+1. **GitHub**: Audit changes, stage files, format a professional Conventional Commit, and execute `git push origin <branch>` directly.
+2. **LinkedIn**: Capture a high-res screenshot of the feature from the browser, save it in the project, and output a high-impact, ready-to-copy LinkedIn post with hook, technical breakdown, CTA, and hashtags.
