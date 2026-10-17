@@ -117,19 +117,19 @@ export function HeroSection({
           {/* Main Heading */}
           <motion.h1
             variants={itemVariants}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-[#F5F7FA] uppercase leading-[1.05] sm:leading-[1.08] mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#F5F7FA] uppercase leading-tight sm:leading-tight mb-5"
           >
             FROM IDEA TO{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#F5F7FA] to-[#9BA7B7]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00D9FF] to-[#A3FF12]">
               APPLICATION
             </span>
-            <span className="text-[#A3FF12] inline-block ml-1">.</span>
+            <span className="text-[#A3FF12] inline-block ml-0.5">.</span>
           </motion.h1>
 
           {/* Supporting Text */}
           <motion.p
             variants={itemVariants}
-            className="text-base sm:text-lg md:text-xl text-[#9BA7B7] max-w-2xl font-normal leading-relaxed mb-8"
+            className="text-sm sm:text-base md:text-lg text-[#9BA7B7] max-w-xl font-normal leading-relaxed mb-7"
           >
             I&apos;m a Computer Science student exploring AI, automation, and software engineering. I turn ideas into practical projects while learning how to build useful digital products.
           </motion.p>
