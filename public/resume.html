@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahmad Hassan - Resume</title>
+  <style>
+    @page {
+      size: letter portrait;
+      margin: 0.5in;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #1a1a1a;
+      line-height: 1.4;
+      background: #ffffff;
+      font-size: 10pt;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 10px;
+    }
+    /* Header */
+    .header {
+      text-align: center;
+      border-bottom: 2px solid #2563eb;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+    .name {
+      font-size: 22pt;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #0f172a;
+      text-transform: uppercase;
+    }
+    .subtitle {
+      font-size: 11pt;
+      font-weight: 600;
+      color: #2563eb;
+      margin-top: 2px;
+    }
+    .contact-bar {
+      margin-top: 6px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 9pt;
+      color: #475569;
+    }
+    .contact-bar a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    .contact-bar a:hover {
+      text-decoration: underline;
+    }
+    /* Section Structure */
+    .section {
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: 11pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #0f172a;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 2px;
+      margin-bottom: 6px;
+    }
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      row-gap: 3px;
+      font-size: 9.5pt;
+    }
+    .skills-label {
+      font-weight: 700;
+      color: #334155;
+    }
+    .skills-content {
+      color: #1e293b;
+    }
+    /* Project / Experience Items */
+    .item {
+      margin-bottom: 8px;
+    }
+    .item:last-child {
+      margin-bottom: 0;
+    }
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+    .item-title {
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 10pt;
+    }
+    .item-title a {
+      color: #0f172a;
+      text-decoration: none;
+    }
+    .item-tech {
+      font-size: 8.5pt;
+      font-style: italic;
+      color: #475569;
+    }
+    .item-meta {
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #64748b;
+    }
+    ul.bullets {
+      list-style-type: disc;
+      padding-left: 16px;
+      margin-top: 2px;
+    }
+    ul.bullets li {
+      font-size: 9pt;
+      color: #334155;
+      margin-bottom: 2px;
+      line-height: 1.35;
+    }
+    ul.bullets li strong {
+      color: #0f172a;
+    }
+    /* Print Utility */
+    .print-btn-bar {
+      text-align: center;
+      margin: 15px 0;
+    }
+    .print-btn {
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      padding: 8px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    @media print {
+      .print-btn-bar {
+        display: none;
+      }
+      body {
+        font-size: 9.5pt;
+      }
+      .container {
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-btn-bar">
+    <button class="print-btn" onclick="window.print()">📥 Save / Print as PDF (Ctrl + P)</button>
+  </div>
+
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1 class="name">Ahmad Hassan</h1>
+      <div class="subtitle">Computer Science Student &amp; Software Developer (AI &amp; Automation)</div>
+      <div class="contact-bar">
+        <span>📍 Pakistan (Open to Remote / Relocation)</span>
+        <span>✉️ <a href="mailto:ahmad.hassan.dev@gmail.com">ahmad.hassan.dev@gmail.com</a></span>
+        <span>💻 <a href="https://github.com/Ahmad-Haassan" target="_blank">github.com/Ahmad-Haassan</a></span>
+        <span>🌐 <a href="https://github.com/Ahmad-Haassan/ahmad-portfolio" target="_blank">Portfolio / Command Center</a></span>
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section class="section">
+      <h2 class="section-title">Professional Summary</h2>
+      <p style="font-size: 9pt; color: #334155; line-height: 1.4;">
+        Computer Science student with strong foundations in Data Structures, Algorithms, and Software Engineering principles. Experienced in building automated systems, AI-powered desktop applications, and high-performance full-stack web platforms using <strong>Python</strong>, <strong>Next.js 16</strong>, <strong>React 19</strong>, and <strong>TypeScript</strong>. Proven track record of independently architecting end-to-end solutions including real-time e-commerce price comparators, offline speech recognition engines, and enterprise webhook integrations.
+      </p>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="section">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skills-label">Languages:</div>
+        <div class="skills-content">Python, C++, TypeScript, JavaScript (ES6+), HTML5, CSS3, SQL</div>
+
+        <div class="skills-label">Frameworks &amp; Web:</div>
+        <div class="skills-content">Next.js 16 (App Router), React 19, FastAPI, Node.js, Tailwind CSS, PyQt6, Motion</div>
+
+        <div class="skills-label">AI &amp; Automation:</div>
+        <div class="skills-content">Faster-Whisper (Local STT), Vosk (Offline Wake-Word), Meta WhatsApp Cloud API, Google Calendar API v3, BeautifulSoup4</div>
+
+        <div class="skills-label">Developer Tools:</div>
+        <div class="skills-content">Git, GitHub CLI, Linux / PowerShell, VS Code, REST APIs, Webhook Security, Postman</div>
+      </div>
+    </section>
+
+    <!-- Key Engineering Projects -->
+    <section class="section">
+      <h2 class="section-title">Key Engineering Projects</h2>
+
+      <!-- ShopLens AI -->
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">
+            <a href="https://github.com/Ahmad-Haassan/shoplens" target="_blank">ShopLens AI — Multi-Store Price Comparison &amp; Review Sentiment Engine</a>
+          </div>
+          <div class="item-meta">Next.js 14, TypeScript, Python, BeautifulSoup4</div>
+        </div>
+        <ul class="bullets">
+          <li><strong>Cross-Platform Scraping Architecture:</strong> Built concurrent data extraction scrapers pulling real-time pricing, stock status, and shipping metrics across Amazon, Best Buy, and Walmart.</li>
+          <li><strong>Normalization &amp; Matching Engine:</strong> Engineered a variant normalization algorithm resolving mismatched manufacturer UPCs, colors, and storage tiers with <strong>95%+ comparison accuracy</strong>.</li>
+          <li><strong>AI Review Synthesis:</strong> Developed an NLP review sentiment analysis pipeline aggregating thousands of verified buyer reviews into positive/negative consensus tags and 90-day price trend graphs.</li>
+        </ul>
+      </div>
+
+      <!-- WhatsApp Business Agent -->
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">
+            <a href="https://github.com/Ahmad-Haassan/WhatsApp-Business-Agent" target="_blank">WhatsApp Business AI Agent — Enterprise Messaging &amp; Meeting Scheduler</a>
+          </div>
+          <div class="item-meta">Python, Meta WhatsApp Cloud API, Google Calendar API, Webhooks</div>
+        </div>
+        <ul class="bullets">
+          <li><strong>Meta Cloud API Webhook Gateway:</strong> Implemented a secure webhook receiver with <strong>SHA256 signature verification</strong> (<span style="font-family: monospace;">X-Hub-Signature-256</span>) to ingest real-time customer WhatsApp messages.</li>
+          <li><strong>Autonomous Appointment Scheduling:</strong> Integrated Google Calendar API v3 to parse conversational dates/times, verify consultant availability, reserve calendar slots, and issue automated meeting links.</li>
+          <li><strong>Intent Classification:</strong> Deployed an AI-driven intent router handling automated customer service FAQs, order inquiries, and escalation hand-offs with an average response latency under <strong>2.5 seconds</strong>.</li>
+        </ul>
+      </div>
+
+      <!-- JARVIS Voice Assistant -->
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">
+            <a href="https://github.com/Ahmad-Haassan/JARVIS-Voice-Agent" target="_blank">JARVIS AI — Offline Wake-Word Voice Assistant &amp; OS Automation Suite</a>
+          </div>
+          <div class="item-meta">Python 3.10+, Faster-Whisper, Vosk, PyQt6, OS Automation</div>
+        </div>
+        <ul class="bullets">
+          <li><strong>Zero-Cloud Speech Pipeline:</strong> Architected a 100% private, two-stage speech engine combining an ultra-low CPU offline <strong>Vosk acoustic model</strong> for wake-word idling and local quantized <strong>Faster-Whisper</strong> for speech-to-text.</li>
+          <li><strong>System-Wide Macro Automation:</strong> Programmed deep Windows OS automation indexing installed applications and executing multi-step macros (e.g., <em>"Start Work Mode"</em> to launch IDEs, terminals, and documentation tabs).</li>
+          <li><strong>Cyberpunk HUD Visualizer:</strong> Built a hardware-accelerated PyQt6 desktop interface featuring dynamic pulsing audio waveform visualizers consuming under <strong>3.5% idle CPU</strong>.</li>
+        </ul>
+      </div>
+
+      <!-- Developer Command Center -->
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">
+            <a href="https://github.com/Ahmad-Haassan/ahmad-portfolio" target="_blank">Developer Platform &amp; Command Center</a>
+          </div>
+          <div class="item-meta">Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS v4, Motion</div>
+        </div>
+        <ul class="bullets">
+          <li><strong>Interactive System Dashboard:</strong> Engineered a developer telemetry portal showcasing active prototypes, verified skill trees, and coursework progression with fluid micro-interactions.</li>
+          <li><strong>Accessibility &amp; Keyboard Navigation:</strong> Built a system-wide Command Palette (<span style="font-family: monospace;">Cmd + K</span>) for instant keyboard shortcuts across deep-dive case studies and contact modules.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section">
+      <h2 class="section-title">Education</h2>
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Bachelor of Science in Computer Science (BSCS)</div>
+          <div class="item-meta">Expected Graduation: 2026</div>
+        </div>
+        <p style="font-size: 8.5pt; color: #475569; margin-top: 2px;">
+          <strong>Relevant Academic Coursework:</strong> Data Structures &amp; Algorithms, Object-Oriented Programming (C++), Operating Systems &amp; Concurrency, Database Management Systems (SQL), Computer Networks, Software Engineering Principles, Artificial Intelligence.
+        </p>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>

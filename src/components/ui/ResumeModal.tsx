@@ -42,7 +42,7 @@ export function ResumeModal({ isOpen, onClose, onOpenConnect }: ResumeModalProps
   if (!isOpen) return null;
 
   const handlePrint = () => {
-    window.print();
+    window.open("/resume.html", "_blank");
   };
 
   return (
