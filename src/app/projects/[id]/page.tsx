@@ -5,7 +5,6 @@ import Link from "next/link";
 import { PROJECTS } from "@/lib/projects";
 import { ProjectCaseStudy } from "@/components/projects/ProjectCaseStudy";
 import { NeuralNetworkBackground } from "@/components/effects/NeuralNetworkBackground";
-import { InteractiveCursorFX } from "@/components/effects/InteractiveCursorFX";
 import { Cpu, ArrowLeft } from "lucide-react";
 
 interface ProjectPageProps {
@@ -50,9 +49,6 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
     <div className="relative min-h-screen bg-[#07090D] text-[#F5F7FA] overflow-x-hidden selection:bg-[#A3FF12] selection:text-[#07090D]">
       {/* Background Neural Canvas */}
       <NeuralNetworkBackground />
-
-      {/* Cursor & Touch FX */}
-      <InteractiveCursorFX />
 
       {/* Minimal Top Header */}
       <header className="sticky top-0 z-40 bg-[#07090D]/85 backdrop-blur-xl border-b border-white/[0.08] px-4 sm:px-8 py-3.5 flex items-center justify-between">

@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import { NeuralNetworkBackground } from "@/components/effects/NeuralNetworkBackground";
-import { InteractiveCursorFX } from "@/components/effects/InteractiveCursorFX";
 import { Navbar } from "@/components/layout/Navbar";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { DeveloperDashboard } from "@/components/sections/DeveloperDashboard";
@@ -47,10 +46,7 @@ export default function HomePage() {
       {/* 1. Subtle Animated Neural-Network & Particle Canvas Background */}
       <NeuralNetworkBackground />
 
-      {/* 2. Interactive Cursor & Touch FX (Sparks trail, Ripples, Spotlight Follower) */}
-      <InteractiveCursorFX />
-
-      {/* 3. Glassmorphism Navigation Bar */}
+      {/* 2. Glassmorphism Navigation Bar */}
       <Navbar
         onOpenConnect={handleOpenConnect}
         onOpenResume={handleOpenResume}
