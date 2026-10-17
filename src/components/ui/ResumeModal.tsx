@@ -73,6 +73,15 @@ export function ResumeModal({ isOpen, onClose, onOpenConnect }: ResumeModalProps
           </div>
 
           <div className="flex items-center gap-2">
+            <a
+              href="/Ahmad_Hassan_Resume.docx"
+              download="Ahmad_Hassan_Resume.docx"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-xs font-mono text-white transition-colors"
+              title="Download Microsoft Word Document (.docx)"
+            >
+              <Download className="w-3.5 h-3.5 text-[#A3FF12]" />
+              <span>Word (.docx)</span>
+            </a>
             <button
               onClick={handlePrint}
               className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-xs font-mono text-white transition-colors"
