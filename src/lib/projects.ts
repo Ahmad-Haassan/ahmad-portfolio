@@ -111,17 +111,17 @@ export const PROJECTS: Project[] = [
       "Structuring resilient extraction pipelines with error fallbacks when website DOM structures update.",
       "Understanding the trade-offs between server-side web scraping and official retailer API feeds.",
     ],
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/Ahmad-Haassan",
   },
   {
-    id: "flexivo",
-    name: "Flexivo",
-    concept: "AI-powered desktop assistant and automation",
-    tagline: "An experimental assistant concept focused on voice interaction and automating everyday computer workflows.",
+    id: "jarvis",
+    name: "Jarvis AI Assistant",
+    concept: "AI-powered desktop assistant and local OS automation",
+    tagline: "A hands-free desktop assistant focused on voice recognition, acoustic parsing, and automating developer computer workflows.",
     overview:
-      "Flexivo is an experimental assistant concept focused on voice interaction, useful shortcuts, and automating everyday computer workflows.",
+      "Jarvis is an intelligent local desktop assistant focused on voice interaction, developer shortcuts, and automating everyday system tasks.",
     description:
-      "Flexivo explores how voice recognition, text-to-speech audio feedback, and local OS automation can eliminate repetitive daily computer tasks.",
+      "Jarvis explores how local speech recognition, text-to-speech audio feedback, and native OS automation can eliminate repetitive developer setups and daily computer friction.",
     problemExplored:
       "Everyday computer use involves repetitive micro-actions: opening specific directories, arranging windows, launching dev servers, and managing meeting notes. Existing desktop assistants are either too rigid (fixed keywords) or too cloud-heavy without direct control over local developer tools.",
     proposedSolution:
@@ -189,7 +189,7 @@ export const PROJECTS: Project[] = [
       "Handling operating system differences in subprocess and window management.",
       "Designing conversational micro-interactions where feedback is concise rather than verbose.",
     ],
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/Ahmad-Haassan",
   },
   {
     id: "whatsapp-automation",

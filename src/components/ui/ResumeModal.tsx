@@ -4,19 +4,14 @@ import React, { useEffect } from "react";
 import {
   X,
   Download,
-  Printer,
   Mail,
   MapPin,
-  ExternalLink,
   GraduationCap,
   Briefcase,
   Code2,
-  Award,
-  Sparkles,
-  Cpu,
+  FileText,
 } from "lucide-react";
-import { GlassCard } from "./GlassCard";
-import { Button } from "./Button";
+import { GithubIcon, LinkedinIcon } from "./Icons";
 
 interface ResumeModalProps {
   isOpen: boolean;
@@ -41,10 +36,6 @@ export function ResumeModal({ isOpen, onClose, onOpenConnect }: ResumeModalProps
 
   if (!isOpen) return null;
 
-  const handlePrint = () => {
-    window.open("/resume.html", "_blank");
-  };
-
   return (
     <div
       role="dialog"
@@ -55,44 +46,49 @@ export function ResumeModal({ isOpen, onClose, onOpenConnect }: ResumeModalProps
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="relative w-full max-w-4xl max-h-[92vh] flex flex-col bg-[#0D1118] border border-white/20 rounded-2xl shadow-[0_25px_70px_rgba(0,0,0,0.85)] overflow-hidden">
+      <div className="relative w-full max-w-4xl max-h-[92vh] flex flex-col bg-[#0D1017] border border-white/20 rounded-2xl shadow-[0_25px_70px_rgba(0,0,0,0.85)] overflow-hidden">
         {/* Modal Controls Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#07090D]/80 backdrop-blur-md shrink-0">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#07080B]/90 backdrop-blur-md shrink-0">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-[#A3FF12]/10 border border-[#A3FF12]/30 flex items-center justify-center">
-              <Cpu className="w-4 h-4 text-[#A3FF12]" />
+            <div className="w-8 h-8 rounded-lg bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center">
+              <FileText className="w-4 h-4 text-indigo-400" />
             </div>
             <div>
               <h2 id="resume-modal-title" className="text-sm sm:text-base font-bold text-white flex items-center gap-2">
                 Ahmad Hassan — Curriculum Vitae
               </h2>
-              <span className="text-[11px] font-mono text-[#9BA7B7]">
-                AI &amp; Automation Developer · Systems Engineer
+              <span className="text-[11px] font-mono text-slate-400">
+                Web Developer &amp; AI Automations Specialist
               </span>
             </div>
           </div>
 
           <div className="flex items-center gap-2">
             <a
+              href="/showcase/Ahmad_Hassan_Technical_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download="Ahmad_Hassan_Technical_Resume.pdf"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-xs font-mono text-white transition-colors"
+              title="Download PDF"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span>PDF</span>
+            </a>
+
+            <a
               href="/Ahmad_Hassan_Resume.docx"
               download="Ahmad_Hassan_Resume.docx"
               className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-xs font-mono text-white transition-colors"
-              title="Download Microsoft Word Document (.docx)"
+              title="Download DOCX"
             >
-              <Download className="w-3.5 h-3.5 text-[#A3FF12]" />
-              <span>Word (.docx)</span>
+              <FileText className="w-3.5 h-3.5 text-cyan-400" />
+              <span>Word</span>
             </a>
-            <button
-              onClick={handlePrint}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-xs font-mono text-white transition-colors"
-              title="Print / Save as PDF"
-            >
-              <Printer className="w-3.5 h-3.5 text-[#00D9FF]" />
-              <span>Print / PDF</span>
-            </button>
+
             <button
               onClick={onClose}
-              className="p-1.5 rounded-lg text-white/60 hover:text-white hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A3FF12]"
+              className="p-1.5 rounded-lg text-white/60 hover:text-white hover:bg-white/10 transition-colors focus-visible:outline-none"
               aria-label="Close resume modal"
             >
               <X className="w-5 h-5" />
@@ -101,12 +97,12 @@ export function ResumeModal({ isOpen, onClose, onOpenConnect }: ResumeModalProps
         </div>
 
         {/* Scrollable Document Content */}
-        <div className="overflow-y-auto p-6 sm:p-10 space-y-8 text-sm text-[#C2CCD6]">
+        <div className="overflow-y-auto p-6 sm:p-10 space-y-8 text-sm text-slate-300">
           {/* Header Info */}
           <div className="border-b border-white/10 pb-6">
             <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6">
               <div className="flex items-start gap-4 sm:gap-5">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border-2 border-[#A3FF12]/40 shadow-[0_0_15px_rgba(163,255,18,0.2)] shrink-0 bg-white/[0.04]">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border border-white/15 shadow-lg shrink-0 bg-white/[0.04]">
                   <img
                     src="/ahmad-hassan.png"
                     alt="Ahmad Hassan Portrait"
@@ -117,187 +113,153 @@ export function ResumeModal({ isOpen, onClose, onOpenConnect }: ResumeModalProps
                   <h1 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-white">
                     Ahmad Hassan
                   </h1>
-                  <p className="text-sm font-mono text-[#A3FF12] mt-1 font-semibold">
-                    Computer Science Student · Aspiring AI &amp; Automation Developer
+                  <p className="text-sm font-mono text-indigo-300 mt-1 font-semibold">
+                    Web Developer &amp; AI Automations Specialist
                   </p>
-                  <p className="text-xs text-[#9BA7B7] mt-2 max-w-xl leading-relaxed">
-                    Passionate student engineer exploring AI integration, desktop automation prototypes, and modern responsive web applications with strong foundations in computer science.
+                  <p className="text-xs text-slate-400 mt-2 max-w-xl leading-relaxed">
+                    Undergraduate Computer Science student engineering modern Next.js web applications, webhook-driven API backends, and local Python automation systems.
                   </p>
                 </div>
               </div>
 
-              <div className="space-y-1.5 text-xs font-mono text-[#9BA7B7] shrink-0 sm:text-right">
+              <div className="space-y-1.5 text-xs font-mono text-slate-400 shrink-0 sm:text-right">
                 <div className="flex sm:justify-end items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-[#00D9FF]" />
+                  <MapPin className="w-3.5 h-3.5 text-cyan-400" />
                   <span>Pakistan (Remote / Worldwide)</span>
                 </div>
                 <div className="flex sm:justify-end items-center gap-1.5">
-                  <Mail className="w-3.5 h-3.5 text-[#A3FF12]" />
+                  <Mail className="w-3.5 h-3.5 text-indigo-400" />
                   <a
-                    href="mailto:ahmad.hassan.dev@gmail.com"
-                    className="hover:text-white transition-colors underline decoration-white/20"
+                    href="mailto:ahmadd557125@gmail.com"
+                    className="hover:text-white transition-colors"
                   >
-                    ahmad.hassan.dev@gmail.com
+                    ahmadd557125@gmail.com
                   </a>
                 </div>
-                <div className="flex sm:justify-end items-center gap-2 pt-1 text-[11px] text-[#00D9FF]">
-                  <span>Status: Open for Student Collaborations &amp; Internships</span>
+                <div className="flex sm:justify-end items-center gap-1.5 pt-1">
+                  <a
+                    href="https://github.com/Ahmad-Haassan"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition-colors flex items-center gap-1"
+                  >
+                    <GithubIcon className="w-3 h-3" />
+                    <span>github.com/Ahmad-Haassan</span>
+                  </a>
+                </div>
+                <div className="flex sm:justify-end items-center gap-1.5">
+                  <a
+                    href="https://www.linkedin.com/in/ahmad-haassan/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-cyan-300 text-cyan-400 transition-colors flex items-center gap-1"
+                  >
+                    <LinkedinIcon className="w-3 h-3" />
+                    <span>linkedin.com/in/ahmad-haassan</span>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Core Technical Strengths */}
+          {/* Education */}
           <div>
-            <h3 className="text-xs font-mono uppercase tracking-widest text-[#00D9FF] flex items-center gap-2 mb-3">
-              <Code2 className="w-4 h-4" />
-              <span>Explored Skills &amp; Technologies</span>
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-              <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-                <span className="text-xs font-bold text-white block mb-1">
-                  Programming Languages
-                </span>
-                <p className="text-xs text-[#9BA7B7] leading-relaxed">
-                  C++ (Data Structures, OOP, Memory &amp; Complexity Analysis), Python (Automation Scripting, Data Extraction, Prototyping).
-                </p>
-              </div>
-              <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-                <span className="text-xs font-bold text-white block mb-1">
-                  Web Development
-                </span>
-                <p className="text-xs text-[#9BA7B7] leading-relaxed">
-                  Next.js (App Router, Turbopack), React 19, TypeScript, JavaScript (ES6+), Tailwind CSS, HTML5 semantic structure, CSS layout architecture.
-                </p>
-              </div>
-              <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-                <span className="text-xs font-bold text-white block mb-1">
-                  Development Tools
-                </span>
-                <p className="text-xs text-[#9BA7B7] leading-relaxed">
-                  Git, GitHub (Version Control, Branching, Pull Requests), Visual Studio Code, AI-assisted programming tools for testing &amp; refactoring.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Featured Engineering Projects */}
-          <div>
-            <h3 className="text-xs font-mono uppercase tracking-widest text-[#A3FF12] flex items-center gap-2 mb-3">
-              <Briefcase className="w-4 h-4" />
-              <span>Selected Key Projects &amp; Implementations</span>
-            </h3>
-            <div className="space-y-4">
-              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.08]">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1.5">
-                  <h4 className="text-base font-bold text-white">
-                    ShopLens — Product Discovery &amp; Price Comparison
-                  </h4>
-                  <span className="text-xs font-mono text-[#A3FF12]">
-                    Next.js · TypeScript · Python · Web Scraping
-                  </span>
-                </div>
-                <p className="text-xs text-[#9BA7B7] leading-relaxed mb-2">
-                  An exploration of product comparison and shopping research helping users compare cross-store prices, evaluate structured product specs, and read summarized reviews before buying.
-                </p>
-                <div className="flex flex-wrap gap-1.5 text-[10px] font-mono text-[#00D9FF]">
-                  <span>• Cross-Store Price Delta Comparison</span>
-                  <span>• Specification Schema Parsing</span>
-                  <span>• Review Summarization</span>
-                </div>
-              </div>
-
-              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.08]">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1.5">
-                  <h4 className="text-base font-bold text-white">
-                    Flexivo — AI Desktop Assistant Concept
-                  </h4>
-                  <span className="text-xs font-mono text-[#00D9FF]">
-                    Python · Speech Recognition · OS Automation · APIs
-                  </span>
-                </div>
-                <p className="text-xs text-[#9BA7B7] leading-relaxed mb-2">
-                  An experimental desktop assistant focused on voice interaction, system shortcuts, and automating everyday computer workflows to eliminate repetitive friction.
-                </p>
-                <div className="flex flex-wrap gap-1.5 text-[10px] font-mono text-[#A3FF12]">
-                  <span>• Voice Command Recognition</span>
-                  <span>• Application Hotkeys &amp; Launching</span>
-                  <span>• Text-to-Speech Feedback</span>
-                </div>
-              </div>
-
-              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.08]">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1.5">
-                  <h4 className="text-base font-bold text-white">
-                    WhatsApp Business Automation
-                  </h4>
-                  <span className="text-xs font-mono text-amber-300">
-                    Node.js · Webhooks · Cloud API · Workflow Logic
-                  </span>
-                </div>
-                <p className="text-xs text-[#9BA7B7] leading-relaxed mb-2">
-                  An automation project exploring how messaging workflows and AI-assisted responses can help businesses handle routine customer communication efficiently.
-                </p>
-                <div className="flex flex-wrap gap-1.5 text-[10px] font-mono text-[#9BA7B7]">
-                  <span>• Webhook Signature Ingestion</span>
-                  <span>• Message Template Triggers</span>
-                  <span>• FAQ Response Routing</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Education & Foundations */}
-          <div>
-            <h3 className="text-xs font-mono uppercase tracking-widest text-[#00D9FF] flex items-center gap-2 mb-3">
+            <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-indigo-400 mb-3">
               <GraduationCap className="w-4 h-4" />
-              <span>Education &amp; Academic Background</span>
-            </h3>
-            <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.08]">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
-                <h4 className="text-sm font-bold text-white">
-                  Bachelor of Science in Computer Science (BSCS)
-                </h4>
-                <span className="text-xs font-mono text-[#A3FF12]">
-                  Expected Graduation: 2026
-                </span>
+              <span>Education</span>
+            </div>
+            <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] space-y-1">
+              <div className="flex justify-between items-baseline">
+                <span className="font-bold text-white">Bachelor of Science in Computer Science (BSCS)</span>
+                <span className="text-xs font-mono text-slate-400">In Progress</span>
               </div>
-              <p className="text-xs text-[#9BA7B7] leading-relaxed">
-                Coursework: Data Structures &amp; Algorithms, Object Oriented Programming, Operating Systems, Database Management Systems, Computer Networks, Software Engineering Principles, Artificial Intelligence.
+              <p className="text-xs text-slate-400">Undergraduate Degree</p>
+              <p className="text-xs text-slate-300 pt-1">
+                Relevant Focus: Data Structures &amp; Algorithms in C++, OOP, Operating Systems &amp; Concurrency, Software Engineering, AI Fundamentals.
               </p>
+            </div>
+          </div>
+
+          {/* Technical Skills */}
+          <div>
+            <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-cyan-400 mb-3">
+              <Code2 className="w-4 h-4" />
+              <span>Technical Skills</span>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+              <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+                <strong className="text-white block mb-1">Languages:</strong>
+                <span className="text-slate-300">Python, TypeScript, JavaScript (ES6+), C++, HTML5, CSS3</span>
+              </div>
+              <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+                <strong className="text-white block mb-1">Frameworks &amp; UI:</strong>
+                <span className="text-slate-300">Next.js 16 (App Router), React 19, Tailwind CSS, Motion</span>
+              </div>
+              <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+                <strong className="text-white block mb-1">AI &amp; Automation:</strong>
+                <span className="text-slate-300">Playwright, BeautifulSoup, SpeechRecognition, pyttsx3, LLM APIs (Gemini &amp; OpenAI)</span>
+              </div>
+              <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+                <strong className="text-white block mb-1">Backend &amp; Tooling:</strong>
+                <span className="text-slate-300">Node.js, Express, REST APIs, Webhooks, HMAC SHA256, Git, GitHub Actions</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Projects */}
+          <div>
+            <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-emerald-400 mb-3">
+              <Briefcase className="w-4 h-4" />
+              <span>Featured Engineering Projects</span>
+            </div>
+            <div className="space-y-3">
+              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] space-y-1">
+                <div className="flex justify-between items-baseline">
+                  <span className="font-bold text-white">ShopLens — Ecommerce Research &amp; Price Engine</span>
+                  <span className="text-xs font-mono text-slate-400">Next.js 16 • Python • LLM</span>
+                </div>
+                <p className="text-xs text-slate-300">
+                  Cross-store product discovery tool with automated Playwright/BS4 scrapers, SKU spec normalization, and AI sentiment distillation.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] space-y-1">
+                <div className="flex justify-between items-baseline">
+                  <span className="font-bold text-white">Jarvis (Flexivo) — Local Voice AI Desktop Assistant</span>
+                  <span className="text-xs font-mono text-slate-400">Python • SpeechRecognition • OS Macros</span>
+                </div>
+                <p className="text-xs text-slate-300">
+                  Voice recognition desktop tool for launching developer workspaces, running command pipelines, and spoken audio feedback without cloud latency.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] space-y-1">
+                <div className="flex justify-between items-baseline">
+                  <span className="font-bold text-white">WhatsApp Business Automation — Webhook Router</span>
+                  <span className="text-xs font-mono text-slate-400">Node.js • Meta Graph API • SHA256</span>
+                </div>
+                <p className="text-xs text-slate-300">
+                  Resilient webhook service for Meta Cloud API with SHA256 verification, state-machine intent matching, and interactive template responses.
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Footer Actions */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 px-6 py-4 border-t border-white/10 bg-[#07090D]/90 backdrop-blur-md shrink-0">
-          <span className="text-xs font-mono text-[#9BA7B7] flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5 text-[#A3FF12]" />
-            Verified Digital Resume · Updated 2026
+        {/* Footer CTA */}
+        <div className="flex items-center justify-between px-6 py-4 border-t border-white/10 bg-[#07080B]/80 shrink-0">
+          <span className="text-xs font-mono text-slate-400">
+            Open for freelance projects &amp; engineering opportunities
           </span>
-          <div className="flex items-center gap-3 w-full sm:w-auto">
-            <Button
-              variant="secondary"
-              size="sm"
-              onClick={handlePrint}
-              icon={<Printer className="w-3.5 h-3.5 text-[#00D9FF]" />}
-              className="flex-1 sm:flex-initial"
-            >
-              Print / Save PDF
-            </Button>
-            <Button
-              variant="primary"
-              size="sm"
-              onClick={() => {
-                onClose();
-                onOpenConnect();
-              }}
-              icon={<Mail className="w-3.5 h-3.5 text-[#07090D]" />}
-              className="flex-1 sm:flex-initial"
-            >
-              Contact Ahmad
-            </Button>
-          </div>
+          <button
+            onClick={() => {
+              onClose();
+              onOpenConnect();
+            }}
+            className="px-4 py-2 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white transition-all shadow-md"
+          >
+            Contact Ahmad
+          </button>
         </div>
       </div>
     </div>

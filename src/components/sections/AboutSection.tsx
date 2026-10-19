@@ -1,25 +1,20 @@
 "use client";
 
-import React, { useState } from "react";
-import Link from "next/link";
+import React from "react";
 import {
   User,
-  Terminal,
   Cpu,
   Sparkles,
-  Binary,
   Code2,
   GraduationCap,
   Layers,
   ArrowRight,
   FileText,
-  Compass,
-  Lightbulb,
-  CheckCircle2,
-  BookOpen,
+  Mail,
+  MapPin,
 } from "lucide-react";
-import { GlassCard } from "@/components/ui/GlassCard";
-import { Button } from "@/components/ui/Button";
+import { About3DCube } from "@/components/effects/About3DCube";
+import { GithubIcon, LinkedinIcon } from "@/components/ui/Icons";
 
 interface AboutSectionProps {
   onOpenConnect: () => void;
@@ -27,306 +22,100 @@ interface AboutSectionProps {
 }
 
 export function AboutSection({ onOpenConnect, onOpenResume }: AboutSectionProps) {
-  const [activeTab, setActiveTab] = useState<"intro" | "interests" | "philosophy">("intro");
-
-  const interestAreas = [
-    {
-      icon: <Cpu className="w-4 h-4 text-[#A3FF12]" />,
-      title: "AI & Automation",
-      desc: "Exploring how language models and intelligent scripting can automate repetitive computer tasks and enhance human workflows.",
-    },
-    {
-      icon: <Code2 className="w-4 h-4 text-[#00D9FF]" />,
-      title: "Web & Software Engineering",
-      desc: "Building clean, interactive user interfaces using Next.js, TypeScript, and modern responsive design patterns.",
-    },
-    {
-      icon: <GraduationCap className="w-4 h-4 text-[#A3FF12]" />,
-      title: "Computer Science Foundations",
-      desc: "Studying algorithmic problem solving, data structures, and software principles to write disciplined, maintainable code.",
-    },
-    {
-      icon: <Sparkles className="w-4 h-4 text-[#00D9FF]" />,
-      title: "Practical Product Design",
-      desc: "Turning concepts into working software prototypes like ShopLens and Flexivo to explore genuine usability and value.",
-    },
-  ];
-
   return (
     <section
       id="about"
       aria-label="About Ahmad Hassan"
-      className="relative py-24 sm:py-32 border-t border-white/[0.06] overflow-hidden"
+      className="relative py-24 sm:py-32 border-t border-white/[0.08] overflow-hidden"
     >
-      {/* Background ambient glow */}
-      <div
-        aria-hidden="true"
-        className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-[#A3FF12]/05 rounded-full blur-[140px] pointer-events-none"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-[#00D9FF]/05 rounded-full blur-[150px] pointer-events-none"
-      />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/10 text-xs font-mono text-[#A3FF12] mb-3">
-              <User className="w-3.5 h-3.5" />
-              <span>ABOUT ME · IDENTITY</span>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          {/* Left Column: Personal Narrative, Background, Credentials */}
+          <div className="lg:col-span-7 space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/10 text-xs font-mono text-indigo-300">
+              <User className="w-3.5 h-3.5 text-indigo-400" />
+              <span>ABOUT THE DEVELOPER</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white uppercase">
-              THE PERSON BEHIND <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A3FF12] via-[#00D9FF] to-white">THE CODE</span>
+
+            <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
+              Ahmad Hassan — The Mind Behind The Code
             </h2>
-            <p className="text-sm sm:text-base text-[#9BA7B7] mt-3 max-w-2xl leading-relaxed">
-              Aspiring AI &amp; automation developer crafting intuitive digital experiences while building a strong foundation in computer science.
+
+            <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+              I am an undergraduate Computer Science student who loves bridging the gap between rigorous systems thinking and high-speed modern software. Rather than building generic tutorials, I build practical tools: cross-store shopping intelligence engines, hands-free voice desktop assistants like Jarvis, and automated messaging pipelines.
             </p>
-          </div>
 
-          <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.08]">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#A3FF12] animate-pulse" />
-            <span className="text-xs font-mono text-[#C2CCD6]">
-              Student &amp; Active Builder
-            </span>
-          </div>
-        </div>
-
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Left Column: Interactive Terminal & Bio */}
-          <div className="lg:col-span-7 flex flex-col gap-6">
-            <GlassCard variant="elevated" className="p-6 sm:p-8">
-              {/* Terminal Title Bar */}
-              <div className="flex items-center justify-between pb-5 border-b border-white/[0.08] mb-6">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-[#FF5F56]/80" />
-                  <div className="w-3 h-3 rounded-full bg-[#FFBD2E]/80" />
-                  <div className="w-3 h-3 rounded-full bg-[#27C93F]/80" />
-                  <span className="ml-2 text-xs font-mono text-[#9BA7B7]">
-                    ahmad@student-node: ~/about-me
-                  </span>
+            {/* Quick Pillars Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.08] space-y-1.5">
+                <div className="flex items-center gap-2 text-indigo-400 text-xs font-mono font-bold uppercase">
+                  <Code2 className="w-4 h-4" />
+                  <span>Web Craft</span>
                 </div>
-                <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-white/[0.04] border border-white/[0.08] text-[10px] font-mono text-[#00D9FF]">
-                  <Binary className="w-3 h-3" />
-                  <span>CS STUDENT</span>
-                </div>
-              </div>
-
-              {/* Interactive Tabs */}
-              <div className="flex items-center gap-2 mb-6">
-                <button
-                  onClick={() => setActiveTab("intro")}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all ${
-                    activeTab === "intro"
-                      ? "bg-[#A3FF12]/15 text-[#A3FF12] border border-[#A3FF12]/40"
-                      : "text-[#9BA7B7] hover:text-white hover:bg-white/[0.04]"
-                  }`}
-                >
-                  01. Introduction
-                </button>
-                <button
-                  onClick={() => setActiveTab("interests")}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all ${
-                    activeTab === "interests"
-                      ? "bg-[#00D9FF]/15 text-[#00D9FF] border border-[#00D9FF]/40"
-                      : "text-[#9BA7B7] hover:text-white hover:bg-white/[0.04]"
-                  }`}
-                >
-                  02. Areas of Interest
-                </button>
-                <button
-                  onClick={() => setActiveTab("philosophy")}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all ${
-                    activeTab === "philosophy"
-                      ? "bg-[#A3FF12]/15 text-[#A3FF12] border border-[#A3FF12]/40"
-                      : "text-[#9BA7B7] hover:text-white hover:bg-white/[0.04]"
-                  }`}
-                >
-                  03. Learning Philosophy
-                </button>
-              </div>
-
-              {/* Dynamic Tab Body */}
-              <div className="space-y-4 text-sm sm:text-base text-[#C2CCD6] leading-relaxed">
-                {activeTab === "intro" && (
-                  <div className="space-y-4 animate-fadeIn">
-                    <div className="p-4 rounded-xl bg-gradient-to-r from-white/[0.03] to-transparent border-l-2 border-[#A3FF12] text-[#F5F7FA] font-medium leading-relaxed">
-                      &quot;I&apos;m a Computer Science student interested in AI, automation, and software development. I enjoy exploring new technologies, experimenting with ideas, and turning what I learn into practical projects. My goal is to build useful digital products while developing strong engineering and problem-solving skills.&quot;
-                    </div>
-
-                    <p className="text-sm text-[#9BA7B7]">
-                      Instead of simply reading theory or rushing through tutorials, I believe in rolling up my sleeves and creating tangible tools—from intelligent desktop assistants to e-commerce comparison engines. Every project is an opportunity to debug real-world friction and improve architectural intuition.
-                    </p>
-
-                    <div className="p-4 rounded-xl bg-white/[0.025] border border-white/[0.08] font-mono text-xs text-[#9BA7B7] space-y-1">
-                      <div className="text-[#A3FF12]">$ cat ahmad_profile.json</div>
-                      <div className="pl-4 text-[#C2CCD6]">&#123;</div>
-                      <div className="pl-6"><span className="text-[#00D9FF]">&quot;name&quot;</span>: &quot;Ahmad Hassan&quot;,</div>
-                      <div className="pl-6"><span className="text-[#00D9FF]">&quot;status&quot;</span>: &quot;Computer Science Undergraduate&quot;,</div>
-                      <div className="pl-6"><span className="text-[#00D9FF]">&quot;focus&quot;</span>: [&quot;AI Integration&quot;, &quot;Automation&quot;, &quot;Full-Stack Web&quot;],</div>
-                      <div className="pl-6"><span className="text-[#00D9FF]">&quot;motto&quot;</span>: &quot;Turn learning into practical digital products&quot;</div>
-                      <div className="pl-4 text-[#C2CCD6]">&#125;</div>
-                    </div>
-                  </div>
-                )}
-
-                {activeTab === "interests" && (
-                  <div className="space-y-4 animate-fadeIn">
-                    <p>
-                      My core focus revolves around three interconnected pillars:
-                    </p>
-                    <div className="space-y-3 pt-1">
-                      <div className="p-3.5 rounded-lg bg-white/[0.02] border border-white/[0.06]">
-                        <span className="text-xs font-mono text-[#A3FF12] block mb-1">01. ARTIFICIAL INTELLIGENCE &amp; AGENTS</span>
-                        <p className="text-xs text-[#9BA7B7]">
-                          Exploring how LLMs, prompt pipelines, and multi-turn conversational agents can handle structured reasoning and bridge user intent to deterministic code.
-                        </p>
-                      </div>
-                      <div className="p-3.5 rounded-lg bg-white/[0.02] border border-white/[0.06]">
-                        <span className="text-xs font-mono text-[#00D9FF] block mb-1">02. WORKFLOW &amp; DESKTOP AUTOMATION</span>
-                        <p className="text-xs text-[#9BA7B7]">
-                          Building tools that automate repetitive tasks, route business messaging, and provide seamless voice or shortcut interactions on local computers.
-                        </p>
-                      </div>
-                      <div className="p-3.5 rounded-lg bg-white/[0.02] border border-white/[0.06]">
-                        <span className="text-xs font-mono text-white block mb-1">03. MODERN WEB DEVELOPMENT</span>
-                        <p className="text-xs text-[#9BA7B7]">
-                          Developing fast, reactive user experiences with Next.js Turbopack, TypeScript, Tailwind CSS, and accessible interface design.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {activeTab === "philosophy" && (
-                  <div className="space-y-4 animate-fadeIn">
-                    <p>
-                      My approach to growth as a software engineer is grounded in honesty, discipline, and practical execution:
-                    </p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 font-mono text-xs">
-                      <div className="p-3 rounded-lg bg-white/[0.02] border border-white/[0.06]">
-                        <span className="text-[#A3FF12] block font-bold mb-1">1. Hands-on Experimentation</span>
-                        <span className="text-[#9BA7B7]">Build real prototypes rather than remaining purely theoretical.</span>
-                      </div>
-                      <div className="p-3 rounded-lg bg-white/[0.02] border border-white/[0.06]">
-                        <span className="text-[#00D9FF] block font-bold mb-1">2. Transparent Progress</span>
-                        <span className="text-[#9BA7B7]">Clearly label what is working, what is in progress, and what is planned.</span>
-                      </div>
-                      <div className="p-3 rounded-lg bg-white/[0.02] border border-white/[0.06]">
-                        <span className="text-[#00D9FF] block font-bold mb-1">3. Rigorous Fundamentals</span>
-                        <span className="text-[#9BA7B7]">Complement modern web frameworks with algorithmic and systems foundations.</span>
-                      </div>
-                      <div className="p-3 rounded-lg bg-white/[0.02] border border-white/[0.06]">
-                        <span className="text-[#A3FF12] block font-bold mb-1">4. User-Centric Design</span>
-                        <span className="text-[#9BA7B7]">Design software that solves real bottlenecks with intuitive, polished UX.</span>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* CTAs */}
-              <div className="pt-8 border-t border-white/[0.08] mt-6 flex flex-wrap items-center gap-3">
-                <Button
-                  href="#projects"
-                  variant="primary"
-                  size="md"
-                  icon={<BookOpen className="w-4 h-4 text-[#07090D]" />}
-                >
-                  EXPLORE MY PROJECTS
-                </Button>
-                <Button
-                  onClick={onOpenConnect}
-                  variant="secondary"
-                  size="md"
-                  icon={<Sparkles className="w-4 h-4 text-[#A3FF12]" />}
-                >
-                  START A CONVERSATION
-                </Button>
-                {onOpenResume && (
-                  <Button
-                    onClick={onOpenResume}
-                    variant="glass"
-                    size="md"
-                    icon={<FileText className="w-4 h-4 text-[#00D9FF]" />}
-                  >
-                    VIEW RESUME / CV
-                  </Button>
-                )}
-              </div>
-            </GlassCard>
-          </div>
-
-          {/* Right Column: Featured Portrait & Exploration Cards */}
-          <div className="lg:col-span-5 flex flex-col gap-4">
-            {/* Featured Portrait Card */}
-            <GlassCard
-              variant="elevated"
-              className="p-5 flex items-center gap-5 border-[#A3FF12]/25 shadow-[0_10px_35px_rgba(0,0,0,0.5)]"
-            >
-              <div className="relative shrink-0">
-                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border-2 border-[#A3FF12]/50 shadow-[0_0_20px_rgba(163,255,18,0.25)] relative group bg-white/[0.04]">
-                  <img
-                    src="/ahmad-hassan.png"
-                    alt="Ahmad Hassan Portrait"
-                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#07090D]/50 via-transparent to-transparent pointer-events-none" />
-                </div>
-                <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-[#A3FF12] border-2 border-[#07090D] shadow-[0_0_8px_#A3FF12]" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2 mb-1">
-                  <h3 className="text-base font-bold text-white truncate">Ahmad Hassan</h3>
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#A3FF12]/10 border border-[#A3FF12]/30 text-[#A3FF12] shrink-0">
-                    CS STUDENT
-                  </span>
-                </div>
-                <p className="text-xs font-mono text-[#00D9FF] mb-1.5">
-                  Aspiring AI &amp; Automation Developer
-                </p>
-                <p className="text-[11px] text-[#9BA7B7] leading-relaxed">
-                  Exploring practical software, machine learning concepts, and workflow automation.
+                <p className="text-xs text-slate-400 leading-snug">
+                  Next.js 16, React 19, and TypeScript with a strict focus on speed, responsive beauty, and clean UI architecture.
                 </p>
               </div>
-            </GlassCard>
 
-            <h3 className="text-xs font-mono uppercase tracking-widest text-[#00D9FF] my-1 flex items-center gap-2">
-              <Layers className="w-3.5 h-3.5" />
-              <span>AREAS OF ACTIVE EXPLORATION</span>
-            </h3>
-
-            {interestAreas.map((item, index) => (
-              <GlassCard
-                key={index}
-                variant="interactive"
-                className="p-5 flex items-start gap-4 group"
-              >
-                <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center shrink-0 group-hover:border-[#A3FF12]/40 transition-colors">
-                  {item.icon}
+              <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.08] space-y-1.5">
+                <div className="flex items-center gap-2 text-cyan-400 text-xs font-mono font-bold uppercase">
+                  <Cpu className="w-4 h-4" />
+                  <span>AI &amp; Automation</span>
                 </div>
-                <div className="flex-1">
-                  <h4 className="text-sm font-semibold text-white group-hover:text-[#A3FF12] transition-colors mb-1">
-                    {item.title}
-                  </h4>
-                  <p className="text-xs text-[#9BA7B7] leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
-              </GlassCard>
-            ))}
-
-            {/* Honest Identity Callout */}
-            <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/[0.08] space-y-2.5 mt-2">
-              <div className="flex items-center gap-2 text-xs font-mono text-[#A3FF12]">
-                <CheckCircle2 className="w-4 h-4" />
-                <span>COMMITTED TO HONEST CRAFT</span>
+                <p className="text-xs text-slate-400 leading-snug">
+                  Python voice runners (Jarvis OS), webhook routers, and prompt pipelines that automate repetitive bottlenecks.
+                </p>
               </div>
-              <p className="text-xs text-[#9BA7B7] leading-relaxed">
-                As an aspiring engineer, every project in this portfolio reflects hands-on learning, transparent architecture, and verified implementations. No inflated claims—just real code and continuous improvement.
-              </p>
             </div>
+
+            {/* Contact & Social Bar */}
+            <div className="pt-2 flex flex-wrap items-center gap-3">
+              <button
+                onClick={onOpenConnect}
+                className="px-5 py-2.5 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white transition-all shadow-md flex items-center gap-1.5"
+              >
+                <span>Direct Message</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+
+              {onOpenResume && (
+                <button
+                  onClick={onOpenResume}
+                  className="px-4 py-2.5 rounded-xl text-xs font-mono text-slate-300 hover:text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 transition-colors flex items-center gap-1.5"
+                >
+                  <FileText className="w-3.5 h-3.5" />
+                  <span>View Resume</span>
+                </button>
+              )}
+
+              <a
+                href="https://github.com/Ahmad-Haassan"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-xl bg-white/[0.04] border border-white/10 hover:text-white text-slate-400 transition-colors"
+                title="GitHub"
+              >
+                <GithubIcon className="w-4 h-4" />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/ahmad-haassan/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-xl bg-white/[0.04] border border-white/10 hover:text-cyan-400 text-slate-400 transition-colors"
+                title="LinkedIn"
+              >
+                <LinkedinIcon className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+
+          {/* Right Column: 360° Interactive Profile Cube */}
+          <div className="lg:col-span-5 flex flex-col items-center justify-center p-4 rounded-3xl bg-[#090C14]/60 border border-white/[0.08] backdrop-blur-xl">
+            <span className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mb-2">
+              Interactive 360° Knowledge Cube
+            </span>
+            <About3DCube onOpenConnect={onOpenConnect} />
           </div>
         </div>
       </div>

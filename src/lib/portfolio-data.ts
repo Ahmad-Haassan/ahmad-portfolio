@@ -47,11 +47,11 @@ export interface PortfolioKnowledge {
 
 export const PORTFOLIO_DATA: PortfolioKnowledge = {
   name: "Ahmad Hassan",
-  role: "Computer Science Student | Aspiring AI & Automation Developer",
-  status: "Currently learning and building",
-  tagline: "FROM IDEA TO APPLICATION.",
+  role: "Web Developer & AI Automations Specialist",
+  status: "Available for Projects & Engineering Roles",
+  tagline: "HIGH-PERFORMANCE WEB APPS & AUTONOMOUS AI SYSTEMS",
   introduction:
-    "I'm a Computer Science student interested in AI, automation, and software development. I enjoy exploring new technologies, experimenting with ideas, and turning what I learn into practical projects. My goal is to build useful digital products while developing strong engineering and problem-solving skills.",
+    "I'm Ahmad Hassan, a Computer Science student and developer passionate about modern web engineering and autonomous AI systems. I build responsive applications with Next.js and streamline everyday workflows with Python automation.",
   education: {
     degree: "Bachelor of Science in Computer Science (BSCS)",
     institution: "Undergraduate Student",
@@ -65,9 +65,9 @@ export const PORTFOLIO_DATA: PortfolioKnowledge = {
     ],
   },
   contact: {
-    email: "ahmad.hassan.dev@gmail.com",
+    email: "ahmadd557125@gmail.com",
     github: "https://github.com/Ahmad-Haassan",
-    linkedin: "https://linkedin.com",
+    linkedin: "https://www.linkedin.com/in/ahmad-haassan/",
     location: "Pakistan (Remote / Worldwide)",
   },
   skills: [

@@ -12,12 +12,6 @@ export interface ButtonProps
   iconPosition?: "left" | "right";
 }
 
-interface ButtonRipple {
-  id: number;
-  x: number;
-  y: number;
-}
-
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
@@ -34,8 +28,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0, isHovered: false });
-    const [ripples, setRipples] = useState<ButtonRipple[]>([]);
-    const nextRippleId = useRef(0);
 
     const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
       const rect = e.currentTarget.getBoundingClientRect();
@@ -59,49 +51,36 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       setMousePos((prev) => ({ ...prev, isHovered: false }));
     };
 
-    const triggerRipple = (e: React.MouseEvent<HTMLElement>) => {
-      const rect = e.currentTarget.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const id = ++nextRippleId.current;
-
-      setRipples((prev) => [...prev, { id, x, y }]);
-
-      setTimeout(() => {
-        setRipples((prev) => prev.filter((r) => r.id !== id));
-      }, 650);
-    };
-
     const baseStyles =
-      "relative inline-flex items-center justify-center font-medium tracking-wide transition-all duration-300 rounded-lg cursor-pointer select-none active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#07090D] disabled:opacity-50 disabled:pointer-events-none group overflow-hidden isolation-auto";
+      "relative inline-flex items-center justify-center font-medium tracking-normal transition-all duration-200 rounded-xl cursor-pointer select-none active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#07080B] disabled:opacity-50 disabled:pointer-events-none group overflow-hidden isolation-auto";
 
     const sizeStyles = {
-      sm: "text-xs px-3.5 py-1.5 gap-1.5 rounded-md",
-      md: "text-sm px-5 py-2.5 gap-2 rounded-lg",
-      lg: "text-base px-7 py-3.5 gap-2.5 rounded-xl font-semibold",
+      sm: "text-xs px-3.5 py-1.5 gap-1.5 rounded-lg",
+      md: "text-sm px-5 py-2.5 gap-2 rounded-xl",
+      lg: "text-base px-6 py-3.5 gap-2.5 rounded-2xl font-semibold",
     };
 
     const variantStyles = {
-      // Primary: Electric-Green Accent with dynamic spotlight and edge glow
+      // Primary: Modern Electric Indigo with subtle specular glare
       primary:
-        "bg-[#A3FF12] text-[#07090D] hover:bg-[#b5ff38] shadow-[0_0_20px_rgba(163,255,18,0.28)] hover:shadow-[0_0_35px_rgba(163,255,18,0.55)] focus-visible:ring-[#A3FF12] font-bold border border-[#A3FF12]",
+        "bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/30 border border-indigo-400/30 focus-visible:ring-indigo-500 font-semibold",
 
-      // Secondary: Glass surface with cyan border & subtle hover glow
+      // Secondary: Deep Glass with fine specular border
       secondary:
-        "bg-white/[0.04] text-[#F5F7FA] border border-white/15 hover:border-[#00D9FF]/80 hover:bg-white/[0.08] hover:text-white hover:shadow-[0_0_25px_rgba(0,217,255,0.3)] focus-visible:ring-[#00D9FF] backdrop-blur-md",
+        "bg-white/[0.04] text-slate-200 border border-white/10 hover:border-white/25 hover:bg-white/[0.08] hover:text-white shadow-md focus-visible:ring-cyan-500 backdrop-blur-md",
 
       // Glass: subtle backdrop panel style
       glass:
-        "bg-white/[0.03] text-[#9BA7B7] hover:text-[#F5F7FA] border border-white/10 hover:border-white/25 hover:bg-white/[0.07] backdrop-blur-sm focus-visible:ring-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.08)]",
+        "bg-white/[0.03] text-slate-300 hover:text-white border border-white/10 hover:border-white/20 hover:bg-white/[0.06] backdrop-blur-sm focus-visible:ring-white/30",
 
       // Ghost: minimal
       ghost:
-        "bg-transparent text-[#9BA7B7] hover:text-white hover:bg-white/[0.06] focus-visible:ring-white/20",
+        "bg-transparent text-slate-400 hover:text-white hover:bg-white/[0.06] focus-visible:ring-white/20",
     };
 
     const content = (
       <>
-        {/* 1. Dynamic Cursor Spotlight Glare following mouse within the button */}
+        {/* Cursor Spotlight Glare following mouse within button */}
         <div
           aria-hidden="true"
           className="absolute inset-0 pointer-events-none transition-opacity duration-300"
@@ -109,74 +88,34 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             opacity: mousePos.isHovered ? 1 : 0,
             background:
               variant === "primary"
-                ? `radial-gradient(110px circle at ${mousePos.x}px ${mousePos.y}px, rgba(255, 255, 255, 0.4) 0%, transparent 80%)`
-                : `radial-gradient(110px circle at ${mousePos.x}px ${mousePos.y}px, rgba(0, 217, 255, 0.28) 0%, rgba(163, 255, 18, 0.12) 40%, transparent 80%)`,
+                ? `radial-gradient(90px circle at ${mousePos.x}px ${mousePos.y}px, rgba(255, 255, 255, 0.25) 0%, transparent 80%)`
+                : `radial-gradient(90px circle at ${mousePos.x}px ${mousePos.y}px, rgba(99, 102, 241, 0.2) 0%, transparent 80%)`,
           }}
         />
 
-        {/* 2. Diagonal Shimmer Sweep Light reflection on hover */}
+        {/* Shimmer sweep on hover */}
         <div
           aria-hidden="true"
           className="absolute inset-0 -translate-x-full group-hover:animate-shimmer pointer-events-none"
           style={{
             background:
               variant === "primary"
-                ? "linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent)"
-                : "linear-gradient(90deg, transparent, rgba(0,217,255,0.25), transparent)",
+                ? "linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)"
+                : "linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent)",
           }}
         />
 
-        {/* 3. Click Ripples Expanding from cursor contact point */}
-        {ripples.map((r) => (
-          <span
-            key={r.id}
-            aria-hidden="true"
-            className="absolute rounded-full pointer-events-none animate-button-ripple"
-            style={{
-              left: `${r.x}px`,
-              top: `${r.y}px`,
-              transform: "translate(-50%, -50%)",
-              backgroundColor:
-                variant === "primary"
-                  ? "rgba(7, 9, 13, 0.28)"
-                  : "rgba(0, 217, 255, 0.35)",
-            }}
-          />
-        ))}
-
-        {/* 4. Sci-Fi HUD Corner Bracket ticks on primary and secondary buttons */}
-        {(variant === "primary" || variant === "secondary") && (
-          <>
-            <span
-              aria-hidden="true"
-              className="absolute top-1 left-1 w-1.5 h-1.5 border-t border-l border-current opacity-30 group-hover:opacity-100 transition-opacity pointer-events-none"
-            />
-            <span
-              aria-hidden="true"
-              className="absolute top-1 right-1 w-1.5 h-1.5 border-t border-r border-current opacity-30 group-hover:opacity-100 transition-opacity pointer-events-none"
-            />
-            <span
-              aria-hidden="true"
-              className="absolute bottom-1 left-1 w-1.5 h-1.5 border-b border-l border-current opacity-30 group-hover:opacity-100 transition-opacity pointer-events-none"
-            />
-            <span
-              aria-hidden="true"
-              className="absolute bottom-1 right-1 w-1.5 h-1.5 border-b border-r border-current opacity-30 group-hover:opacity-100 transition-opacity pointer-events-none"
-            />
-          </>
-        )}
-
-        {/* 5. Actual Interactive Content (Icons & Label) */}
+        {/* Content */}
         {icon && iconPosition === "left" && (
-          <span className="relative z-10 transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:scale-110">
+          <span className="relative z-10 transition-transform duration-200 group-hover:-translate-x-0.5">
             {icon}
           </span>
         )}
-        <span className="relative z-10 tracking-wider transition-colors duration-200">
+        <span className="relative z-10 transition-colors duration-150">
           {children}
         </span>
         {icon && iconPosition === "right" && (
-          <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:scale-110">
+          <span className="relative z-10 transition-transform duration-200 group-hover:translate-x-0.5">
             {icon}
           </span>
         )}
@@ -192,7 +131,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           onClick={(e) => {
-            triggerRipple(e);
             if (href.startsWith("#")) {
               const target = document.querySelector(href);
               if (target) {
@@ -215,10 +153,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        onClick={(e) => {
-          triggerRipple(e);
-          if (onClick) onClick(e);
-        }}
+        onClick={onClick}
         {...props}
       >
         {content}

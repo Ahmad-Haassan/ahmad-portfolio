@@ -1,24 +1,24 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { NeuralNetworkBackground } from "@/components/effects/NeuralNetworkBackground";
+import { CinematicAmbientBackground } from "@/components/effects/CinematicAmbientBackground";
 import { Navbar } from "@/components/layout/Navbar";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { DeveloperDashboard } from "@/components/sections/DeveloperDashboard";
-import { ProjectsSection } from "@/components/sections/ProjectsSection";
+import { SpecializationSection } from "@/components/sections/SpecializationSection";
+import { ProjectDeepDiveStudio } from "@/components/projects/ProjectDeepDiveStudio";
 import { AboutSection } from "@/components/sections/AboutSection";
+import { ResumeSection } from "@/components/sections/ResumeSection";
 import { SkillsSection } from "@/components/sections/SkillsSection";
-import { JourneySection } from "@/components/sections/JourneySection";
 import { Footer } from "@/components/layout/Footer";
 import { ConnectModal } from "@/components/ui/ConnectModal";
 import { ResumeModal } from "@/components/ui/ResumeModal";
 import { CommandPalette } from "@/components/ui/CommandPalette";
-import { PortfolioAssistant } from "@/components/assistant/PortfolioAssistant";
 
 export default function HomePage() {
   const [isConnectOpen, setIsConnectOpen] = useState(false);
   const [isResumeOpen, setIsResumeOpen] = useState(false);
   const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
+  const [selectedProjectId, setSelectedProjectId] = useState<string>("shoplens");
 
   // Global keyboard shortcut: ⌘K or Ctrl+K opens the Command Palette
   useEffect(() => {
@@ -41,56 +41,60 @@ export default function HomePage() {
   const handleOpenCommandPalette = () => setIsCommandPaletteOpen(true);
   const handleCloseCommandPalette = () => setIsCommandPaletteOpen(false);
 
-  return (
-    <div className="relative min-h-screen bg-[#07090D] text-[#F5F7FA] overflow-x-hidden selection:bg-[#A3FF12] selection:text-[#07090D]">
-      {/* 1. Subtle Animated Neural-Network & Particle Canvas Background */}
-      <NeuralNetworkBackground />
+  const handleSelectProject = (projectId: string) => {
+    setSelectedProjectId(projectId);
+  };
 
-      {/* 2. Glassmorphism Navigation Bar */}
+  return (
+    <div className="relative min-h-screen bg-[#07080B] text-[#F8FAFC] overflow-x-hidden selection:bg-[#6366F1] selection:text-white">
+      {/* 1. Cinematic Ambient Dynamic Background (Video-style fluid mesh) */}
+      <CinematicAmbientBackground />
+
+      {/* 2. Refined Glassmorphism Navigation Bar */}
       <Navbar
         onOpenConnect={handleOpenConnect}
         onOpenResume={handleOpenResume}
         onOpenCommandPalette={handleOpenCommandPalette}
       />
 
-      {/* 4. Main Content Flow: Days 2 - 7 Integrated */}
+      {/* 3. Streamlined, Fabulous Main Content Flow */}
       <main className="relative z-10 flex flex-col">
-        {/* Day 2: Hero Section */}
+        {/* Flagship Hero with Interactive 360° 3D Cube */}
         <HeroSection
           onOpenConnect={handleOpenConnect}
           onOpenResume={handleOpenResume}
-          onOpenCommandPalette={handleOpenCommandPalette}
+          onSelectProject={handleSelectProject}
         />
 
-        {/* Day 3: Personal OS / Developer Dashboard Section */}
-        <DeveloperDashboard onOpenConnect={handleOpenConnect} />
+        {/* Specialization: Web Developer & AI Automations Specialist */}
+        <SpecializationSection onOpenConnect={handleOpenConnect} />
 
-        {/* Day 4 & 5: Main Projects Showcase & Detailed Case Studies */}
-        <ProjectsSection onOpenConnect={handleOpenConnect} />
+        {/* Flagship Projects Studio with In-Depth Technical Details & Simulators */}
+        <ProjectDeepDiveStudio
+          onOpenConnect={handleOpenConnect}
+          selectedProjectId={selectedProjectId}
+        />
 
-        {/* Day 6: About Me — The Person Behind The Code */}
+        {/* About: The Developer Behind The Code & 360° Profile Cube */}
         <AboutSection
           onOpenConnect={handleOpenConnect}
           onOpenResume={handleOpenResume}
         />
 
-        {/* Day 6: Interactive Skills — Tools I'm Exploring */}
-        <SkillsSection />
+        {/* Dedicated Curriculum Vitae & Credentials */}
+        <ResumeSection onOpenConnect={handleOpenConnect} />
 
-        {/* Day 6: Learning Journey — My Building Journey */}
-        <JourneySection />
+        {/* Skills: Practical Technologies & Tools */}
+        <SkillsSection />
       </main>
 
-      {/* 5. Minimal Footer Foundation */}
+      {/* 4. Minimalist Luxury Footer */}
       <Footer
         onOpenConnect={handleOpenConnect}
         onOpenResume={handleOpenResume}
       />
 
-      {/* 6. Day 7: Ahmad's AI Guide Floating Assistant */}
-      <PortfolioAssistant />
-
-      {/* 7. Modals & Overlays */}
+      {/* 5. Modals & Overlays */}
       <ConnectModal
         isOpen={isConnectOpen}
         onClose={handleCloseConnect}

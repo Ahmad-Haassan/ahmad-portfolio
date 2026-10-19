@@ -1,35 +1,35 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg-main: #07090D;
-  --color-bg-secondary: #0D1118;
-  --color-glass: rgba(255, 255, 255, 0.045);
-  --color-glass-border: rgba(255, 255, 255, 0.12);
-  --color-text-primary: #F5F7FA;
-  --color-text-secondary: #9BA7B7;
-  --color-accent-primary: #A3FF12;
-  --color-accent-secondary: #00D9FF;
+  --color-bg-main: #07080B;
+  --color-bg-secondary: #0D1017;
+  --color-glass: rgba(255, 255, 255, 0.035);
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+  --color-text-primary: #F8FAFC;
+  --color-text-secondary: #8E9BAE;
+  --color-accent-primary: #6366F1;
+  --color-accent-secondary: #06B6D4;
 }
 
 :root {
-  --background: #07090D;
-  --foreground: #F5F7FA;
-  --secondary: #0D1118;
-  --muted: #9BA7B7;
-  --accent-green: #A3FF12;
-  --accent-cyan: #00D9FF;
-  --border-subtle: rgba(255, 255, 255, 0.12);
+  --background: #07080B;
+  --foreground: #F8FAFC;
+  --secondary: #0D1017;
+  --muted: #8E9BAE;
+  --accent-indigo: #6366F1;
+  --accent-cyan: #06B6D4;
+  --border-subtle: rgba(255, 255, 255, 0.1);
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: #07090D;
-  color: #F5F7FA;
+  background-color: #07080B;
+  color: #F8FAFC;
 }
 
 body {
-  background-color: #07090D;
-  color: #F5F7FA;
+  background-color: #07080B;
+  color: #F8FAFC;
   min-height: 100vh;
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
@@ -38,70 +38,66 @@ body {
 }
 
 ::selection {
-  background-color: #A3FF12;
-  color: #07090D;
+  background-color: #6366F1;
+  color: #FFFFFF;
 }
 
-/* Glassmorphism primitives */
+/* Glassmorphism primitives with modern, luxury finish */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.045);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.4);
 }
 
 .glass-panel-elevated {
-  background: rgba(13, 17, 24, 0.65);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  background: rgba(13, 16, 23, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
-/* Restrained glow utilities */
-.glow-green-sm {
-  box-shadow: 0 0 15px -3px rgba(163, 255, 18, 0.25);
+/* Refined, tasteful glows */
+.glow-indigo-sm {
+  box-shadow: 0 0 20px -3px rgba(99, 102, 241, 0.3);
 }
 
-.glow-green-md {
-  box-shadow: 0 0 25px -4px rgba(163, 255, 18, 0.35);
+.glow-indigo-md {
+  box-shadow: 0 0 35px -4px rgba(99, 102, 241, 0.4);
 }
 
 .glow-cyan-sm {
-  box-shadow: 0 0 15px -3px rgba(0, 217, 255, 0.25);
+  box-shadow: 0 0 20px -3px rgba(6, 182, 212, 0.25);
 }
 
-.text-glow-green {
-  text-shadow: 0 0 20px rgba(163, 255, 18, 0.4);
+.text-glow-indigo {
+  text-shadow: 0 0 24px rgba(99, 102, 241, 0.45);
 }
 
-.text-glow-cyan {
-  text-shadow: 0 0 20px rgba(0, 217, 255, 0.4);
-}
-
-/* Custom subtle scrollbar */
+/* Custom sleek scrollbar */
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #07090D;
+  background: #07080B;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.12);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(163, 255, 18, 0.5);
+  background: rgba(99, 102, 241, 0.5);
 }
 
-/* Subtle scanline / radial ambient overlay */
-.ambient-glow-radial {
-  background: radial-gradient(circle at 50% 0%, rgba(0, 217, 255, 0.08) 0%, rgba(163, 255, 18, 0.04) 35%, transparent 70%);
+/* Subtle radial vignette overlay */
+.bg-radial-vignette {
+  background: radial-gradient(circle at 50% 50%, transparent 40%, rgba(7, 8, 11, 0.75) 100%);
 }
 
 @keyframes shimmer {
@@ -113,25 +109,8 @@ body {
   }
 }
 
-@keyframes button-ripple {
-  0% {
-    width: 0px;
-    height: 0px;
-    opacity: 0.75;
-  }
-  100% {
-    width: 320px;
-    height: 320px;
-    opacity: 0;
-  }
-}
-
 .animate-shimmer {
-  animation: shimmer 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-.animate-button-ripple {
-  animation: button-ripple 0.65s ease-out forwards;
+  animation: shimmer 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

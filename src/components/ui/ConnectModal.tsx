@@ -24,7 +24,7 @@ export function ConnectModal({ isOpen, onClose }: ConnectModalProps) {
   const [copied, setCopied] = useState(false);
   const [sentMessage, setSentMessage] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const email = "ahmad.hassan.dev@gmail.com";
+  const email = "ahmadd557125@gmail.com";
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -148,14 +148,14 @@ export function ConnectModal({ isOpen, onClose }: ConnectModalProps) {
               <ExternalLink className="w-3 h-3 text-[#9BA7B7]" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/ahmad-haassan/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 text-xs font-mono text-[#00D9FF] transition-colors"
+              className="flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 text-xs font-mono text-cyan-300 transition-colors"
             >
-              <LinkedinIcon className="w-3.5 h-3.5 text-[#00D9FF]" />
+              <LinkedinIcon className="w-3.5 h-3.5 text-cyan-400" />
               <span>LinkedIn</span>
-              <ExternalLink className="w-3 h-3 text-[#9BA7B7]" />
+              <ExternalLink className="w-3 h-3 text-slate-400" />
             </a>
           </div>
 

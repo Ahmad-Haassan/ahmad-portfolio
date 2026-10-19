@@ -1,319 +1,287 @@
 "use client";
 
-import React from "react";
-import { motion, type Variants } from "motion/react";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import {
   ArrowRight,
   Sparkles,
-  Bot,
-  Layers,
-  Code2,
-  Terminal,
-  Activity,
-  Cpu,
   FileText,
-  Command,
-  MapPin,
+  Mail,
+  Code2,
+  Bot,
+  Zap,
+  Globe,
+  Terminal,
+  ExternalLink,
+  ShieldCheck,
   CheckCircle2,
-  Workflow,
+  Play,
 } from "lucide-react";
-import { Button } from "@/components/ui/Button";
-import { GlassCard } from "@/components/ui/GlassCard";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/Icons";
 
 interface HeroSectionProps {
   onOpenConnect: () => void;
   onOpenResume?: () => void;
-  onOpenCommandPalette?: () => void;
+  onSelectProject?: (projectId: string) => void;
 }
+
+const ROLES = [
+  "Full-Stack Web Developer",
+  "AI Automations Architect",
+  "Jarvis Voice OS Builder",
+  "Next.js 16 & React 19 Specialist",
+];
 
 export function HeroSection({
   onOpenConnect,
   onOpenResume,
-  onOpenCommandPalette,
+  onSelectProject,
 }: HeroSectionProps) {
-  // Stagger variants for smooth, cinematic entrance
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1,
-      },
-    },
-  };
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
 
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 22 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.7,
-        ease: [0.22, 1, 0.36, 1] as const,
-      },
-    },
-  };
-
-  const panelVariants: Variants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.85,
-        ease: [0.22, 1, 0.36, 1] as const,
-      },
-    },
-  };
+  // Dynamic role cycling
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentRoleIndex((prev) => (prev + 1) % ROLES.length);
+    }, 2800);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section
       id="home"
       aria-label="Introduction and Hero"
-      className="relative min-h-screen flex flex-col justify-center pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden"
+      className="relative min-h-[95vh] flex items-center pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden"
     >
-      {/* Ambient glowing radial lights */}
-      <div
-        aria-hidden="true"
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-[#00D9FF]/10 via-[#A3FF12]/08 to-transparent rounded-full blur-[120px] pointer-events-none"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute bottom-10 right-10 w-[350px] h-[350px] bg-[#00D9FF]/05 rounded-full blur-[140px] pointer-events-none"
-      />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="flex flex-col items-center text-center max-w-4xl mx-auto"
-        >
-          {/* Eyebrow & Status HUD */}
-          <motion.div
-            variants={itemVariants}
-            className="mb-6 flex flex-wrap items-center justify-center gap-3"
-          >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.12] backdrop-blur-md shadow-[0_2px_12px_rgba(0,0,0,0.4)]">
-              <span className="w-2 h-2 rounded-full bg-[#A3FF12] animate-pulse" />
-              <span className="text-xs font-mono font-medium tracking-widest text-[#9BA7B7] uppercase">
-                COMPUTER SCIENCE • AI • AUTOMATION
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+          {/* ================= LEFT COLUMN: Kinetic Typography & Value Proposition ================= */}
+          <div className="lg:col-span-7 flex flex-col items-start text-left space-y-6">
+            {/* Top Kinetic Live Status Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.1] backdrop-blur-md shadow-sm"
+            >
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="text-xs font-mono text-slate-300">
+                Available for Projects • Web &amp; AI Systems
               </span>
+            </motion.div>
+
+            {/* Dynamic Kinetic Headline */}
+            <div className="space-y-2">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="flex items-center gap-2 text-sm sm:text-base font-mono text-indigo-400 font-semibold uppercase tracking-wider"
+              >
+                <span>👋 Hello, I&apos;m Ahmad Hassan</span>
+              </motion.div>
+
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                className="text-4xl sm:text-6xl lg:text-[62px] font-black tracking-tight text-white leading-[1.08]"
+              >
+                Building Next-Gen Web &amp;{" "}
+                <span className="bg-gradient-to-r from-indigo-400 via-cyan-300 to-indigo-300 bg-clip-text text-transparent">
+                  Autonomous AI
+                </span>{" "}
+                Workflows.
+              </motion.h1>
+
+              {/* Animated Morphing Role Pill */}
+              <div className="h-9 flex items-center pt-1">
+                <span className="text-xs sm:text-sm font-mono text-slate-400 mr-2">Specializing in:</span>
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={currentRoleIndex}
+                    initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
+                    animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    exit={{ opacity: 0, y: -10, filter: "blur(4px)" }}
+                    transition={{ duration: 0.35 }}
+                    className="inline-flex items-center px-3 py-1 rounded-lg text-xs sm:text-sm font-mono font-bold bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 shadow-sm"
+                  >
+                    {ROLES[currentRoleIndex]}
+                  </motion.span>
+                </AnimatePresence>
+              </div>
             </div>
 
-            {onOpenCommandPalette && (
+            {/* Subtitle / Pitch */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="text-base sm:text-lg text-slate-300 max-w-xl leading-relaxed"
+            >
+              Computer Science student and full-stack builder engineering clean Next.js 16 applications and custom Python automation pipelines (like Jarvis OS) to eliminate manual friction.
+            </motion.p>
+
+            {/* Call To Actions */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+              className="flex flex-wrap items-center gap-3.5 pt-2 w-full sm:w-auto"
+            >
+              <a
+                href="#projects"
+                className="px-6 py-3.5 rounded-xl text-sm font-semibold bg-indigo-600 hover:bg-indigo-500 text-white transition-all shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2 active:scale-95"
+              >
+                <span>Explore 3D Projects</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
+
               <button
-                onClick={onOpenCommandPalette}
-                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 text-xs font-mono text-[#00D9FF] transition-colors"
+                type="button"
+                onClick={onOpenConnect}
+                className="px-5 py-3.5 rounded-xl text-sm font-medium bg-white/[0.04] hover:bg-white/[0.08] text-slate-200 hover:text-white border border-white/10 hover:border-white/20 transition-all flex items-center justify-center gap-2 active:scale-95"
               >
-                <Command className="w-3.5 h-3.5" />
-                <span>Press ⌘K for Command Menu</span>
+                <Mail className="w-4 h-4 text-indigo-400" />
+                <span>Message Me</span>
               </button>
-            )}
-          </motion.div>
 
-          {/* Main Heading */}
-          <motion.h1
-            variants={itemVariants}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#F5F7FA] uppercase leading-tight sm:leading-tight mb-5"
-          >
-            FROM IDEA TO{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00D9FF] to-[#A3FF12]">
-              APPLICATION
-            </span>
-            <span className="text-[#A3FF12] inline-block ml-0.5">.</span>
-          </motion.h1>
+              {onOpenResume && (
+                <button
+                  type="button"
+                  onClick={onOpenResume}
+                  className="px-4 py-3.5 rounded-xl text-sm font-mono text-slate-400 hover:text-white transition-colors flex items-center gap-1.5"
+                >
+                  <FileText className="w-4 h-4 text-cyan-400" />
+                  <span>Resume</span>
+                </button>
+              )}
+            </motion.div>
 
-          {/* Supporting Text */}
-          <motion.p
-            variants={itemVariants}
-            className="text-sm sm:text-base md:text-lg text-[#9BA7B7] max-w-xl font-normal leading-relaxed mb-7"
-          >
-            I&apos;m a Computer Science student exploring AI, automation, and software engineering. I turn ideas into practical projects while learning how to build useful digital products.
-          </motion.p>
-
-          {/* Status Indicator & Quick Links */}
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-wrap items-center justify-center gap-4 text-xs font-mono text-[#9BA7B7] mb-10"
-          >
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/[0.03] border border-white/10">
-              <span className="w-2 h-2 rounded-full bg-[#A3FF12] animate-pulse" />
-              <span className="text-white font-medium">Currently learning and building</span>
-            </div>
-
-            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.02] border border-white/5">
-              <MapPin className="w-3.5 h-3.5 text-[#00D9FF]" />
-              <span>Remote / Worldwide</span>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <a
-                href="https://github.com/Ahmad-Haassan"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-1.5 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 text-white transition-colors"
-                title="GitHub Profile"
-              >
-                <GithubIcon className="w-4 h-4" />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-1.5 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 text-[#00D9FF] transition-colors"
-                title="LinkedIn Profile"
-              >
-                <LinkedinIcon className="w-4 h-4" />
-              </a>
-            </div>
-          </motion.div>
-
-          {/* Interactive CTAs */}
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
-          >
-            <Button
-              href="#projects"
-              variant="primary"
-              size="lg"
-              className="w-full sm:w-auto"
-              icon={<ArrowRight className="w-4 h-4" />}
+            {/* Quick Metrics Bar */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="pt-6 border-t border-white/[0.08] flex flex-wrap items-center gap-6 text-xs text-slate-400 font-mono"
             >
-              EXPLORE MY PROJECTS
-            </Button>
+              <div className="flex items-center gap-2">
+                <a
+                  href="https://github.com/Ahmad-Haassan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-lg bg-white/[0.03] border border-white/[0.08] hover:text-white hover:border-white/20 transition-all"
+                  aria-label="GitHub"
+                >
+                  <GithubIcon className="w-4 h-4" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/ahmad-haassan/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-lg bg-white/[0.03] border border-white/[0.08] hover:text-cyan-400 hover:border-cyan-400/40 transition-all"
+                  aria-label="LinkedIn"
+                >
+                  <LinkedinIcon className="w-4 h-4" />
+                </a>
+              </div>
 
-            {onOpenResume && (
-              <Button
-                variant="secondary"
-                size="lg"
-                onClick={onOpenResume}
-                className="w-full sm:w-auto"
-                icon={<FileText className="w-4 h-4 text-[#A3FF12]" />}
-              >
-                VIEW RESUME / CV
-              </Button>
-            )}
+              <div className="flex items-center gap-4">
+                <span className="flex items-center gap-1.5 text-slate-300">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-indigo-400" />
+                  <span>Next.js 16 &amp; React 19</span>
+                </span>
+                <span className="flex items-center gap-1.5 text-slate-300">
+                  <Bot className="w-3.5 h-3.5 text-cyan-400" />
+                  <span>Jarvis Voice Automation</span>
+                </span>
+              </div>
+            </motion.div>
+          </div>
 
-            <Button
-              variant="glass"
-              size="lg"
-              onClick={onOpenConnect}
-              className="w-full sm:w-auto"
-              icon={<Sparkles className="w-4 h-4 text-[#00D9FF]" />}
+          {/* ================= RIGHT COLUMN: Styled Hero Portrait with Floating HUD Badges ================= */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="lg:col-span-5 relative flex items-center justify-center"
+          >
+            {/* Ambient Background Aura behind photo */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-indigo-600/20 via-cyan-500/15 to-transparent rounded-3xl blur-3xl pointer-events-none" />
+
+            {/* Main Portrait Frame (NOT a circle!) */}
+            <div className="relative w-full max-w-[360px] sm:max-w-[400px] aspect-[4/5] rounded-3xl overflow-hidden border border-white/15 bg-[#0C101A]/80 backdrop-blur-2xl shadow-[0_25px_60px_rgba(0,0,0,0.85)] group">
+              {/* Photo Image */}
+              <img
+                src="/ahmad-hassan.png"
+                alt="Ahmad Hassan — Full-Stack Developer & AI Automations Specialist"
+                className="w-full h-full object-cover object-top transition-transform duration-750 ease-out group-hover:scale-105"
+              />
+
+              {/* Subtle Gradient Overlays for High-End Studio Depth */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#07080B] via-transparent to-transparent opacity-75" />
+              <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/10 via-transparent to-transparent opacity-60" />
+
+              {/* Bottom Card Title Overlay */}
+              <div className="absolute bottom-5 inset-x-5 p-4 rounded-2xl bg-black/70 border border-white/10 backdrop-blur-xl space-y-1">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-base font-bold text-white tracking-tight">
+                    Ahmad Hassan
+                  </h3>
+                  <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                    Online
+                  </span>
+                </div>
+                <p className="text-xs text-indigo-300 font-mono">
+                  Full-Stack Web &amp; AI Systems Developer
+                </p>
+                <div className="pt-1 flex items-center justify-between text-[11px] font-mono text-slate-400">
+                  <span>BS Computer Science</span>
+                  <a
+                    href="mailto:ahmadd557125@gmail.com"
+                    className="text-cyan-300 hover:underline"
+                  >
+                    ahmadd557125@gmail.com
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating Telemetry Badge 1: Top-Left (Web Engineering) */}
+            <motion.div
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -top-4 -left-4 sm:-left-6 p-3 rounded-2xl bg-[#0E1320]/90 border border-indigo-400/30 backdrop-blur-xl shadow-xl hidden sm:flex items-center gap-2.5"
             >
-              LET&apos;S CONNECT
-            </Button>
+              <div className="w-8 h-8 rounded-xl bg-indigo-500/20 border border-indigo-500/40 flex items-center justify-center text-indigo-400">
+                <Globe className="w-4 h-4" />
+              </div>
+              <div className="text-left">
+                <span className="text-[10px] font-mono text-slate-400 block uppercase">
+                  Frontend Mastery
+                </span>
+                <span className="text-xs font-bold text-white">Next.js 16 • React 19</span>
+              </div>
+            </motion.div>
+
+            {/* Floating Telemetry Badge 2: Bottom-Right (Jarvis Voice OS) */}
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+              className="absolute -bottom-4 -right-4 sm:-right-6 p-3 rounded-2xl bg-[#110D1D]/90 border border-violet-400/30 backdrop-blur-xl shadow-xl hidden sm:flex items-center gap-2.5"
+            >
+              <div className="w-8 h-8 rounded-xl bg-violet-500/20 border border-violet-500/40 flex items-center justify-center text-violet-400">
+                <Bot className="w-4 h-4" />
+              </div>
+              <div className="text-left">
+                <span className="text-[10px] font-mono text-slate-400 block uppercase">
+                  Autonomous Tech
+                </span>
+                <span className="text-xs font-bold text-white">Jarvis OS &amp; Webhooks</span>
+              </div>
+            </motion.div>
           </motion.div>
-        </motion.div>
-
-        {/* Floating Glass Panels (Representing AI, Automation, and Web Development) */}
-        <motion.div
-          variants={panelVariants}
-          initial="hidden"
-          animate="visible"
-          className="mt-16 lg:mt-24 grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto"
-        >
-          {/* Panel 1: AI & Intelligent Systems */}
-          <GlassCard
-            variant="interactive"
-            className="p-5 flex flex-col justify-between group"
-          >
-            <div>
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-lg bg-[#A3FF12]/10 border border-[#A3FF12]/30 flex items-center justify-center">
-                    <Bot className="w-4 h-4 text-[#A3FF12]" />
-                  </div>
-                  <span className="text-[11px] font-mono tracking-wider text-[#9BA7B7] uppercase">
-                    Core Area
-                  </span>
-                </div>
-                <span className="flex items-center gap-1.5 text-[10px] font-mono text-[#A3FF12]">
-                  <Activity className="w-3 h-3 animate-pulse" />
-                  Active Study
-                </span>
-              </div>
-              <h3 className="text-base font-semibold text-white group-hover:text-[#A3FF12] transition-colors mb-1.5">
-                AI &amp; Intelligent Systems
-              </h3>
-              <p className="text-xs text-[#9BA7B7] leading-relaxed">
-                Exploring machine learning concepts, agent architectures, and LLM integrations to solve real problems.
-              </p>
-            </div>
-            <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-[#9BA7B7]">
-              <span>Focus</span>
-              <span className="text-white">Intelligent Workflows</span>
-            </div>
-          </GlassCard>
-
-          {/* Panel 2: Automation & Tools */}
-          <GlassCard
-            variant="interactive"
-            className="p-5 flex flex-col justify-between group"
-          >
-            <div>
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-lg bg-[#00D9FF]/10 border border-[#00D9FF]/30 flex items-center justify-center">
-                    <Workflow className="w-4 h-4 text-[#00D9FF]" />
-                  </div>
-                  <span className="text-[11px] font-mono tracking-wider text-[#9BA7B7] uppercase">
-                    Practical Systems
-                  </span>
-                </div>
-                <span className="text-[10px] font-mono text-[#00D9FF]">
-                  Building
-                </span>
-              </div>
-              <h3 className="text-base font-semibold text-white group-hover:text-[#00D9FF] transition-colors mb-1.5">
-                Automation &amp; Tools
-              </h3>
-              <p className="text-xs text-[#9BA7B7] leading-relaxed">
-                Experimenting with workflow automation, system scripts, and developer tooling to eliminate friction.
-              </p>
-            </div>
-            <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-[#9BA7B7]">
-              <span>Application</span>
-              <span className="text-white">Desktop &amp; Web Scripts</span>
-            </div>
-          </GlassCard>
-
-          {/* Panel 3: Web Development */}
-          <GlassCard
-            variant="interactive"
-            className="p-5 flex flex-col justify-between group"
-          >
-            <div>
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/15 flex items-center justify-center">
-                    <Code2 className="w-4 h-4 text-[#F5F7FA]" />
-                  </div>
-                  <span className="text-[11px] font-mono tracking-wider text-[#9BA7B7] uppercase">
-                    Full-Stack Core
-                  </span>
-                </div>
-                <span className="text-[10px] font-mono text-[#9BA7B7]">
-                  Foundation
-                </span>
-              </div>
-              <h3 className="text-base font-semibold text-white group-hover:text-white transition-colors mb-1.5">
-                Web Development
-              </h3>
-              <p className="text-xs text-[#9BA7B7] leading-relaxed">
-                Building responsive, modern user interfaces with Next.js, React, and TypeScript.
-              </p>
-            </div>
-            <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-[#9BA7B7]">
-              <span>Stack</span>
-              <span className="text-[#A3FF12]">Next.js &amp; TypeScript</span>
-            </div>
-          </GlassCard>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

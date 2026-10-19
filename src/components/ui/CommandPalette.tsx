@@ -225,9 +225,9 @@ export function CommandPalette({
       title: "LinkedIn Professional Profile",
       subtitle: "Connect on LinkedIn for career, networking, and collaborations",
       category: "Social & External",
-      icon: <LinkedinIcon className="w-4 h-4 text-[#00D9FF]" />,
+      icon: <LinkedinIcon className="w-4 h-4 text-cyan-400" />,
       action: () => {
-        window.open("https://linkedin.com", "_blank", "noopener,noreferrer");
+        window.open("https://www.linkedin.com/in/ahmad-haassan/", "_blank", "noopener,noreferrer");
         onClose();
       },
     },
