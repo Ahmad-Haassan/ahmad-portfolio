@@ -1,7 +1,7 @@
 <div align="center">
 
-# ⚡ Ahmad Hassan — Developer Platform
-### *Computer Science Student & Aspiring AI Developer*
+# Ahmad Hassan — Developer Platform
+### *Computer Science & AI Developer Portfolio*
 
 [![Next.js](https://img.shields.io/badge/Next.js-16.4-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.3-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
@@ -13,10 +13,10 @@
 <br />
 
 <p align="center">
-  A modern, high-performance developer portfolio and digital command center designed to present technical coursework, system architecture, active prototypes, and AI-assisted workflows through an interactive, transparent interface.
+  A modern developer portfolio designed to present technical engineering projects, systems architecture, active prototypes and AI workflows through an interactive interface.
 </p>
 
-[**Explore Live Demo**](#) • [**Report Bug**](https://github.com/Ahmad-Haassan/ahmad-portfolio/issues) • [**Request Feature**](https://github.com/Ahmad-Haassan/ahmad-portfolio/issues)
+[**Explore Live Demo**](https://urlclipper.com/tGgTE0) • [**Report Bug**](https://github.com/Ahmad-Haassan/ahmad-portfolio/issues) • [**Request Feature**](https://github.com/Ahmad-Haassan/ahmad-portfolio/issues)
 
 <br />
 
@@ -26,28 +26,28 @@
 
 ---
 
-## 🌟 Key Architecture & Features
+## Key Architecture & Features
 
-### 1. 🖥️ Interactive Developer Dashboard
-- **Live Telemetry & Status**: Transparent view into active learning roadmaps, explored frameworks, and prototype lifecycles without arbitrary or inflated skill percentages.
-- **Philosophy of Iteration**: Tracks the journey from theoretical computer science concepts (Data Structures, Algorithms, OS, Networks) to production-ready applications.
+### 1. Interactive Developer Dashboard
+- **Live Telemetry & Status**: Transparent view into active learning roadmaps, explored frameworks and prototype lifecycles without arbitrary skill metrics.
+- **Philosophy of Iteration**: Tracks practical implementations bridging computer science foundations (Data Structures, Algorithms, OS, Networks) to production software.
 
-### 2. 🔬 Deep-Dive Project Case Studies
-- **ShopLens**: Autonomous product research, price normalization, and review sentiment engine.
-- **Flexivo**: AI-powered desktop assistant and workflow automation prototype built with speech synthesis and OS event routing.
-- **WhatsApp Business Automation**: Webhook message dispatching, intent routing, and conversational AI response flows.
-- **Interactive Modals**: System architecture diagrams, technology tags, and direct repository links.
+### 2. Deep-Dive Project Case Studies
+- **ShopLens**: Autonomous product research, price normalization and review sentiment engine.
+- **JARVIS & GHOST**: Desktop assistant and remote control prototypes built with speech recognition, WebRTC and OS event routing.
+- **WhatsApp Business Automation**: Webhook message dispatching, intent routing and conversational AI response flows.
+- **Interactive Modals**: System architecture diagrams, technology tags and direct repository links.
 
-### 3. ⚡ Command Palette (`Cmd + K` / `Ctrl + K`)
-- Instant keyboard-driven navigation across sections, external profiles, resume inspection, and direct contact dispatchers.
+### 3. Command Palette (`Cmd + K` / `Ctrl + K`)
+- Instant keyboard-driven navigation across sections, external profiles, resume inspection and direct contact dispatchers.
 
-### 4. 🤖 Built-In AI Portfolio Assistant
-- Integrated conversational assistant trained on Ahmad's background, active projects, technical competencies, and contact preferences.
+### 4. Built-In AI Portfolio Assistant
+- Integrated conversational assistant trained on technical competencies, project milestones and contact preferences.
 
-### 5. 🎨 Aesthetic & UX Engineering
-- Cyberpunk-inspired dark aesthetic with subtle neon accents (`#A3FF12` Lime, `#00D9FF` Cyan, `#9B51E0` Purple).
+### 5. Aesthetic & UX Engineering
+- Clean dark aesthetic with subtle neon accents (`#A3FF12` Lime, `#00D9FF` Cyan and `#9B51E0` Purple).
 - Smooth physics-based micro-interactions powered by `motion/react`.
-- Fully responsive across ultra-wide monitors, laptops, tablets, and mobile devices.
+- Fully responsive across ultra-wide monitors, laptops, tablets and mobile devices.
 
 ---
 
@@ -83,10 +83,10 @@ ahmad-portfolio/
 │   ├── components/
 │   │   ├── assistant/          # Conversational AI assistant components
 │   │   ├── layout/             # Navbar, Footer, Background canvas effects
-│   │   ├── projects/           # Case studies, project cards, and metrics
+│   │   ├── projects/           # Case studies, project cards and metrics
 │   │   ├── sections/           # Hero, Dashboard, Skills, About, Journey
 │   │   └── ui/                 # Command Palette, GlassCard, Modals, Buttons
-│   └── lib/                    # Project datasets, telemetry state, and utils
+│   └── lib/                    # Project datasets, telemetry state and utils
 ├── LICENSE                     # MIT Open Source License
 ├── package.json
 └── tsconfig.json
