@@ -119,7 +119,7 @@ ahmad-portfolio/
    ```
 
 4. **Open in browser:**
-   Navigate to https://ahmad-portfolio-olive-nine.vercel.app// to view the live build.
+   Navigate to https://urlclipper.com/tGgTE0 to view the live build.
 
 ---
 
