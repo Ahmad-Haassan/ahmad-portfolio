@@ -126,7 +126,7 @@ ahmad-portfolio/
 ## 📬 Connect & Collaborate
 
 - **GitHub**: [@Ahmad-Haassan](https://github.com/Ahmad-Haassan)
-- **Email**: [ahmad5712126@gmail.com](mailto:ahmad5712126@gmail.com)
+- **Email**: [ahmadd557125@gmail.com](mailto:ahmadd557125@gmail.com)
 - **LinkedIn**: [Connect with Ahmad](https://linkedin.com)
 
 ---
