@@ -1,7 +1,7 @@
 <div align="center">
 
 # Ahmad Hassan — Developer Platform
-### *Computer Science & AI Developer Portfolio*
+### *Computer Science Student @ NASTP Institute of Information Technology (NIIT)*
 
 [![Next.js](https://img.shields.io/badge/Next.js-16.4-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.3-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
