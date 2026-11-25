@@ -114,7 +114,7 @@ export function ResumeSection({ onOpenConnect }: ResumeSectionProps) {
                 <span>github.com/Ahmad-Haassan</span>
               </a>
               <a
-                href="https://www.linkedin.com/in/ahmad-haassan/"
+                href="https://www.linkedin.com/in/ahmadhassan512/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-3 py-1.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-xs font-mono text-cyan-300 hover:text-white transition-colors flex items-center gap-1.5"

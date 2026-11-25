@@ -227,7 +227,7 @@ export function CommandPalette({
       category: "Social & External",
       icon: <LinkedinIcon className="w-4 h-4 text-cyan-400" />,
       action: () => {
-        window.open("https://www.linkedin.com/in/ahmad-haassan/", "_blank", "noopener,noreferrer");
+        window.open("https://www.linkedin.com/in/ahmadhassan512/", "_blank", "noopener,noreferrer");
         onClose();
       },
     },

@@ -148,7 +148,7 @@ export function ConnectModal({ isOpen, onClose }: ConnectModalProps) {
               <ExternalLink className="w-3 h-3 text-[#9BA7B7]" />
             </a>
             <a
-              href="https://www.linkedin.com/in/ahmad-haassan/"
+              href="https://www.linkedin.com/in/ahmadhassan512/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 text-xs font-mono text-cyan-300 transition-colors"

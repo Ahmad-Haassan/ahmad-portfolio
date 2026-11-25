@@ -99,7 +99,7 @@ export function AboutSection({ onOpenConnect, onOpenResume }: AboutSectionProps)
               </a>
 
               <a
-                href="https://www.linkedin.com/in/ahmad-haassan/"
+                href="https://www.linkedin.com/in/ahmadhassan512/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2.5 rounded-xl bg-white/[0.04] border border-white/10 hover:text-cyan-400 text-slate-400 transition-colors"

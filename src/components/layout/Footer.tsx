@@ -56,7 +56,7 @@ export function Footer({ onOpenConnect, onOpenResume }: FooterProps) {
               </a>
 
               <a
-                href="https://www.linkedin.com/in/ahmad-haassan/"
+                href="https://www.linkedin.com/in/ahmadhassan512/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-xl bg-white/[0.04] border border-white/10 hover:border-white/30 hover:text-white text-slate-400 transition-all flex items-center justify-center focus-visible:outline-none"

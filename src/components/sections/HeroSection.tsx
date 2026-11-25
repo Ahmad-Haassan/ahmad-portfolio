@@ -176,7 +176,7 @@ export function HeroSection({
                   <GithubIcon className="w-4 h-4" />
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/ahmad-haassan/"
+                  href="https://www.linkedin.com/in/ahmadhassan512/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 rounded-lg bg-white/[0.03] border border-white/[0.08] hover:text-cyan-400 hover:border-cyan-400/40 transition-all"

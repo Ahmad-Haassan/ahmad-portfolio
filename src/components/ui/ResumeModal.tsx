@@ -149,13 +149,13 @@ export function ResumeModal({ isOpen, onClose, onOpenConnect }: ResumeModalProps
                 </div>
                 <div className="flex sm:justify-end items-center gap-1.5">
                   <a
-                    href="https://www.linkedin.com/in/ahmad-haassan/"
+                    href="https://www.linkedin.com/in/ahmadhassan512/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-cyan-300 text-cyan-400 transition-colors flex items-center gap-1"
                   >
                     <LinkedinIcon className="w-3 h-3" />
-                    <span>linkedin.com/in/ahmad-haassan</span>
+                    <span>linkedin.com/in/ahmadhassan512/</span>
                   </a>
                 </div>
               </div>
